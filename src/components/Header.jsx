@@ -7,8 +7,8 @@ function Header() {
   const navigate = useNavigate()
 
   return (
-    <div className="bg-[#434c5d] px-[60px] py-[20px] sticky inset-0 z-50">
-      <nav className="bg-[#2E374766] flex justify-between items-center gap-2 px-[70px] py-[31px] rounded-[18px]">
+    <div className="bg-[#434c5d] px-[60px] py-[20px] sticky inset-0 z-50 ">
+      <nav className="bg-[#2E374766] flex justify-between items-center gap-2 px-[70px] py-[31px] rounded-[18px] max-w-7xl mx-auto">
         <div onClick={() => navigate('/')}>
           <img
             src="images/logo.png"
@@ -17,17 +17,17 @@ function Header() {
           />
         </div>
         <div className="flex gap-4 items-center">
-          <NavLink to="/feature" className={linkClass}>
+          <NavLink to="/features" className={linkClass}>
             Feature
           </NavLink>
-          <NavLink to="/pricing" className={linkClass}>
-            Pricing
+          <NavLink to="/howItWorks" className={linkClass}>
+            How it works
           </NavLink>
-          <NavLink to="/about" className={linkClass}>
-            About
+          <NavLink to="/blog" className={linkClass}>
+            Blog
           </NavLink>
-          <NavLink to="/contact" className={linkClass}>
-            Contact
+          <NavLink to="/faq" className={linkClass}>
+            FAQ
           </NavLink>
           <a href="/app.apk" download className=" cursor-pointer">
             <button
