@@ -8,8 +8,12 @@ export function ShareArticle() {
         <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
           {/* Text */}
           <div>
-            <h4 className="text-lg font-semibold text-gray-900">Share this article</h4>
-            <p className="text-gray-500 text-sm">Help others discover this content</p>
+            <h4 className="text-lg font-semibold text-gray-900">
+              Share this article
+            </h4>
+            <p className="text-gray-500 text-sm">
+              Help others discover this content
+            </p>
           </div>
 
           {/* Icons */}
@@ -33,9 +37,23 @@ export function ShareArticle() {
             </button>
 
             <button className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-600 hover:bg-gray-200 transition">
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 8a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7" />
+              <svg
+                className="h-5 w-5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15 8a3 3 0 11-6 0 3 3 0 016 0z"
+                />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M17 16l4-4m0 0l-4-4m4 4H7"
+                />
               </svg>
             </button>
           </div>

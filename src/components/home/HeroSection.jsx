@@ -5,7 +5,7 @@ export default function HeroSection() {
     <div className="min-h-screen p-4 rounded-3xl bg-[#0b1220] text-white flex items-center justify-center">
       <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left Main Section */}
-        <div className="lg:col-span-2 bg-gradient-to-br from-[#0f1b2d] to-[#0b1220] rounded-3xl p-8 md:p-12 flex flex-col justify-between">
+        <div className="lg:col-span-2 bg-gradient-to-br from-[#0f1b2d] to-[#0b1220] rounded-3xl p-8 md:p-12 flex flex-col justify-between relative">
           <div>
             <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm mb-8">
               <span className="w-2 h-2 bg-green-400 rounded-full"></span>
@@ -34,20 +34,20 @@ export default function HeroSection() {
           </div>
 
           {/* Phone Mockup */}
-          <div className="mt-12 flex justify-center">
+          <div className="mt-12 hidden md:flex justify-center absolute  -bottom-3 right-1">
             <img
-              src="/mnt/data/70265733-0a5d-4b90-9b04-84a77a5e03a4.png"
+              src="/images/iPhone.png"
               alt="App preview"
-              className="max-w-xs md:max-w-sm drop-shadow-2xl"
+              className="max-w-xs md:max-w-sm drop-shadow-2xl w-[150px]"
             />
           </div>
         </div>
 
         {/* Right Cards */}
-        <div className="grid grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 gap-6 ">
           {/* Global Reach */}
           <div className="bg-white text-black rounded-3xl p-6 flex flex-col justify-between">
-            <div>
+            <div className="space-y-4">
               <div className="text-emerald-600 font-medium flex items-center gap-2">
                 🌍 Global Reach
               </div>
@@ -59,30 +59,34 @@ export default function HeroSection() {
           </div>
 
           {/* Crypto Ready */}
-          <div className="bg-[#0f1b2d] rounded-3xl p-6 flex flex-col justify-between">
+          <div className="bg-[#0f1b2d] rounded-3xl p-6 flex flex-col justify-between relative">
+            <img src="/images/mainbit.png" alt="" className="absolute w-[160px] top-0 right-0" />
             <div>
+              <img src="/images/graph.png" alt=""  className="w-[40.77px] h-[40.77px] mb-[17.5px]"/>
               <div className="text-emerald-400 font-medium flex items-center gap-2">
-                📈 Crypto Ready
+                 Crypto Ready
               </div>
-              <p className="text-white/70 mt-4">
+              <p className="text-white/70 mt-5 text-xs">
                 Trade BTC instantly with zero hidden fees.
               </p>
             </div>
-            <button className="text-emerald-400 mt-6 flex items-center gap-2">
-              View Rates →
+            <button className="text-emerald-400 mt-6 flex  items-center gap-4 text-xs">
+              <p>View Rates </p>
+              <span><img src="/images/greenarrow.png" alt="" className="w-4" /></span>
+              
             </button>
           </div>
 
           {/* Join Users */}
-          <div className="bg-slate-100 text-black rounded-3xl p-6 flex items-center justify-between">
+          <div className="bg-slate-100 text-black rounded-3xl p-6 flex items-center justify-between py-18">
             <div>
               <h3 className="text-emerald-600 font-semibold">
                 Join 50k+ Users
               </h3>
               <p className="text-black/60">Start your journey today</p>
             </div>
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow">
-              →
+            <div>
+             <img src="/images/rightArror.png" alt="" className="w-12"/>
             </div>
           </div>
         </div>

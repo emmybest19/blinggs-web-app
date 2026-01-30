@@ -3,7 +3,7 @@ import HeroSection from "../components/home/HeroSection"
 
 function Home() {
     return (
-        <div className="bg-[#434c5d] px-[60px]">
+        <div className="bg-[#434c5d] px-[15px] md:px-[60px] py-[10px] md:py-[30px]">
             <HeroSection />
             <CTASection />
         </div>

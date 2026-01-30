@@ -3,7 +3,7 @@ import WhatYouCanDo from "../components/howItWorks/WhatYouCanDo"
 
 function HowItWorks() {
     return (
-        <div className="bg-[#434c5d] px-[60px] py-[30px]">
+        <div className="bg-[#434c5d] px-[15px] md:px-[60px] py-[10px] md:py-[30px]">
             <StartInMinutes />
             <WhatYouCanDo />
         </div>

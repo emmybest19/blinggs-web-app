@@ -29,22 +29,27 @@ export default function CTASection() {
 
           {/* Store buttons */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="flex items-center gap-3 px-6 py-3 rounded-full bg-white text-black font-medium w-full sm:w-auto justify-center">
-              <span className="text-xl"></span>
+            <button className="flex items-center gap-3 px-6 py-3 cursor-pointer rounded-full bg-white text-black font-medium w-full sm:w-auto justify-center">
+              <img src="/images/apple.png" alt="" className="w-4" />
               App Store
             </button>
 
-            <button className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 text-white backdrop-blur border border-white/20 w-full sm:w-auto justify-center">
-              <span className="text-xl">▶</span>
+            <button className="flex items-center cursor-pointer gap-3 px-6 py-3 rounded-full bg-white/10 text-white backdrop-blur border border-white/20 w-full sm:w-auto justify-center">
+              <img src="/images/google.png" alt="" className="w-4" />
               Google Play
             </button>
           </div>
 
           {/* Footer info */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center text-white/50 text-sm">
-            <span className="flex items-center gap-2">🔒 Bank-grade Security</span>
+            <span className="flex items-center gap-2">
+              <img src="/images/black.png" alt="" className="w-4" /> Bank-grade
+              Security
+            </span>
             <span className="hidden sm:inline">•</span>
-            <span className="flex items-center gap-2">📱 iOS & Android</span>
+            <span className="flex items-center gap-2">
+              <img src="/images/ios.png" alt="" className="w-4" /> iOS & Android
+            </span>
           </div>
         </div>
       </div>

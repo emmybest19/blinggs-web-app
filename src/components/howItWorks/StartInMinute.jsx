@@ -6,69 +6,24 @@ export default function StartInMinutes() {
       id: 1,
       title: "Download",
       description: "Get Bling from your app store.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-7 w-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M12 3v12m0 0l4-4m-4 4l-4-4M4 17h16"
-          />
-        </svg>
-      ),
+      icon: (<img src="/images/download.png" alt="" />)
     },
     {
       id: 2,
       title: "Sign Up",
       description: "Create account in 2 minutes.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-7 w-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M18 9a3 3 0 11-6 0 3 3 0 016 0zM6 20a6 6 0 1112 0H6z"
-          />
-        </svg>
-      ),
+      icon: (<img src="/images/signup.png" alt="" />),
     },
     {
       id: 3,
       title: "Transact",
       description: "Start sending money instantly.",
-      icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="h-7 w-7"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 3L3 10l7 2 2 7 9-16z"
-          />
-        </svg>
-      ),
+      icon: (<img src="/images/transact.png" alt="" />),
     },
   ];
 
   return (
-    <section className="w-full bg-white py-20 px-4 rounded-2xl">
+    <section className="w-full bg-white py-10 px-10 rounded-2xl">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -83,7 +38,7 @@ export default function StartInMinutes() {
         {/* Steps */}
         <div className="relative flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8">
           {/* Horizontal line (desktop only) */}
-          <div className="hidden md:block absolute top-1/2 left-0 right-0 h-px bg-indigo-200" />
+          <div className="hidden md:block absolute top-11 left-0 right-0 h-px bg-indigo-200" />
 
           {steps.map((step) => (
             <div
