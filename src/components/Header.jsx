@@ -95,9 +95,9 @@ function Header() {
           <a href="/app.apk" download>
             <button
               type="button"
-              className="text-black px-[32px] py-[14px] bg-[#009875] rounded-lg hover:opacity-90 transition"
+              className="text-black px-[32px] py-[14px] bg-[#009875] rounded-lg hover:opacity-90 transition text-white"
             >
-              Download
+              Get App
             </button>
           </a>
         </div>
