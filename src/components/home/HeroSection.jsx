@@ -14,13 +14,15 @@ export default function HeroSection() {
 
             <h1 className="text-4xl md:text-6xl font-semibold leading-tight">
               Message. Pay. <br />
-              <span className="text-emerald-400">Grow Together.</span>
+              <span className="text-emerald-400">Build Value Together.</span>
             </h1>
 
             <p className="text-white/70 mt-6 max-w-xl">
-              Blingg combines secure messaging with powerful financial tools.
-              Send money, manage group savings, and trade crypto—all in one
-              place.
+              Blingg is a secure messaging and financial super app that brings
+              communication and payments into one trusted platform. Chat
+              securely, send and receive money, manage group contributions, and
+              access digital financial tools seamlessly, all in one place. Built
+              for reliability. Designed for growth. Ready for Africa and beyond.
             </p>
 
             <div className="flex flex-wrap gap-4 mt-8">
@@ -60,11 +62,19 @@ export default function HeroSection() {
 
           {/* Crypto Ready */}
           <div className="bg-[#0f1b2d] rounded-3xl p-6 flex flex-col justify-between relative">
-            <img src="/images/mainbit.png" alt="" className="absolute w-[160px] top-0 right-0" />
+            <img
+              src="/images/mainbit.png"
+              alt=""
+              className="absolute w-[160px] top-0 right-0"
+            />
             <div>
-              <img src="/images/graph.png" alt=""  className="w-[40.77px] h-[40.77px] mb-[17.5px]"/>
+              <img
+                src="/images/graph.png"
+                alt=""
+                className="w-[40.77px]  mb-[17.5px]"
+              />
               <div className="text-emerald-400 font-medium flex items-center gap-2">
-                 Crypto Ready
+                Crypto Ready
               </div>
               <p className="text-white/70 mt-5 text-xs">
                 Trade BTC instantly with zero hidden fees.
@@ -72,21 +82,24 @@ export default function HeroSection() {
             </div>
             <button className="text-emerald-400 mt-6 flex  items-center gap-4 text-xs">
               <p>View Rates </p>
-              <span><img src="/images/greenarrow.png" alt="" className="w-4" /></span>
-              
+              <span>
+                <img src="/images/greenarrow.png" alt="" className="w-4" />
+              </span>
             </button>
           </div>
 
           {/* Join Users */}
           <div className="bg-slate-100 text-black rounded-3xl p-6 flex items-center justify-between py-18">
-            <div>
+            <div className="flex flex-col gap-5">
+              <p className="text-black/60">
+                Send, Receive and convert BTC instantly with no hidden fee
+              </p>
               <h3 className="text-emerald-600 font-semibold">
-                Join 50k+ Users
+                Join millions of active users
               </h3>
-              <p className="text-black/60">Start your journey today</p>
             </div>
             <div>
-             <img src="/images/rightArror.png" alt="" className="w-12"/>
+              <img src="/images/rightArror.png" alt="" className="w-12" />
             </div>
           </div>
         </div>

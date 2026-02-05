@@ -46,14 +46,20 @@ export default function FeaturesGrid() {
             </div>
 
             <h3 className="mt-1 text-xl md:text-2xl font-semibold text-slate-900 mb-3">
-              Smart Payments
+              Smart File & Link Protection
             </h3>
-            <p className="text-slate-600 mb-6">
-              Pay bills, buy airtime, and transfer to any bank instantly.
+            <p className="text-slate-600 mb-2">
+              Share with confidence on Blingg.
             </p>
           </div>
 
-          <div className="space-y-3">
+          <p className="">
+            Every file and link is checked for scams, phishing, and malware
+            before you open it, so you stay protected while you chat. Safe chats.
+            No surprises.
+          </p>
+
+          {/* <div className="space-y-3">
             <div className="bg-white rounded-xl p-4 flex justify-between text-sm">
               <span>Electric Bill</span>
               <span className="font-medium">₦15,000</span>
@@ -62,7 +68,7 @@ export default function FeaturesGrid() {
               <span>Airtime</span>
               <span className="font-medium">₦2,000</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Group Power */}
@@ -124,18 +130,20 @@ export default function FeaturesGrid() {
                 <span className="font-medium">Bitcoin</span>
               </div>
               <div className="flex items-center">
-              <img src="/images/graph.png" alt="" className="w-14" />
-              
+                <img src="/images/graph.png" alt="" className="w-14" />
               </div>
             </div>
             <p className="text-sm text-slate-400 mb-1">Current Rate</p>
             <p className="text-2xl font-semibold mb-4">₦110,450,230</p>
             <div className="flex gap-3">
               <button className="flex-1 bg-indigo-600 rounded-xl py-2">
-                Buy
+                Send
               </button>
               <button className="flex-1 bg-slate-700 rounded-xl py-2">
-                Sell
+                Receive
+              </button>
+              <button className="flex-1 bg-[#009875] rounded-xl py-2">
+                Convert
               </button>
             </div>
           </div>

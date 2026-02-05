@@ -28,16 +28,18 @@ export default function SaveTogether() {
               </h3>
 
               <p className="text-slate-300 mb-6 max-w-md">
-                Perfect for close friends and family. Create a savings circle where the admin has full control over withdrawals and management.
+                Designed for life’s special moments. Personal Groups on Blingg
+                let friends and family save, contribute, and donate together
+                with ease. Create a shared wallet, contribute anytime, and
+                withdraw instantly — no approvals needed. <br />
+                Perfect for: Weddings • Birthdays • Naming ceremonies • Burial
+                support • Baby showers • Housewarming • Family & friends savings
+                Simple. Fast. Stress-free.
               </p>
             </div>
 
             <div className="flex items-center gap-3 text-slate-200">
-             <img
-              src="/images/admincontrol.png"
-              alt=""
-              className="w-5 "
-            />
+              <img src="/images/admincontrol.png" alt="" className="w-5 " />
               <div>
                 <p className="font-medium">Admin Controlled</p>
                 <p className="text-sm text-slate-400">
@@ -48,10 +50,10 @@ export default function SaveTogether() {
 
             <div className="absolute top-2 right-4 opacity-60">
               <img
-              src="/images/group2.png"
-              alt=""
-              className="md:w-28 md:h-32 w-20 "
-            />
+                src="/images/group2.png"
+                alt=""
+                className="md:w-28 md:h-32 w-20 "
+              />
             </div>
 
             {/* Icon */}
@@ -71,11 +73,17 @@ export default function SaveTogether() {
               </span>
 
               <h3 className="text-2xl md:text-3xl font-semibold mb-4">
-                Public Groups
+                General Groups
               </h3>
 
               <p className="text-emerald-100 mb-6 max-w-md">
-                Designed for larger communities and cooperatives. Enhanced security requires 3-person approval for any withdrawal.
+                Because group money deserves group control. General Groups are
+                designed for transparency and accountability. All contributions
+                go into a secure group wallet Withdrawal requests are visible to
+                members. <br/>Enhanced security 60% of members must approve before
+                funds are released No single person can misuse group funds Best
+                for: Churches • Cooperatives • Associations • Community projects
+                With Blingg, every contribution is protected by shared approval.
               </p>
             </div>
 
@@ -91,10 +99,10 @@ export default function SaveTogether() {
 
             <div className="absolute top-2 right-4 opacity-60">
               <img
-              src="/images/group2.png"
-              alt=""
-              className="md:w-28 md:h-32 w-20 "
-            />
+                src="/images/group2.png"
+                alt=""
+                className="md:w-28 md:h-32 w-20 "
+              />
             </div>
 
             {/* Icon */}
