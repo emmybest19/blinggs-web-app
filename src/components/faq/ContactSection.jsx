@@ -16,7 +16,7 @@ export default function ContactSection() {
                   Email Us
                 </h3>
                 <p className="mt-1 text-sm text-gray-600">
-                  support@bling.app
+                  support@blinggapp.com
                 </p>
               </div>
             </div>

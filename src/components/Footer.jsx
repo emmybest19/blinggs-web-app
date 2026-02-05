@@ -44,7 +44,7 @@ function Footer() {
                   >
                     <Icon />
                   </a>
-                )
+                ),
               )}
             </div>
           </div>
@@ -128,7 +128,10 @@ function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-700/50 mt-16 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
-          <p>© 2025 Blingg Technologies. All rights reserved.</p>
+          <p>
+            © 2026 Zeta Technology Limited. All rights reserved. Blingg is a
+            product of Zeta Technology Limited.
+          </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white">
               Privacy

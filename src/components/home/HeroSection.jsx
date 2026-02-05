@@ -65,7 +65,7 @@ export default function HeroSection() {
             <img
               src="/images/mainbit.png"
               alt=""
-              className="absolute w-[160px] top-0 right-0"
+              className="absolute w-[130px] top-0 right-0"
             />
             <div>
               <img
@@ -77,7 +77,7 @@ export default function HeroSection() {
                 Crypto Ready
               </div>
               <p className="text-white/70 mt-5 text-xs">
-                Trade BTC instantly with zero hidden fees.
+                Receive, send and convert BTC instantly with zero hidden fees.
               </p>
             </div>
             <button className="text-emerald-400 mt-6 flex  items-center gap-4 text-xs">
