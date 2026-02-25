@@ -1,60 +1,12 @@
-// import { Navigate, NavLink, useNavigate } from "react-router-dom";
-
-// function Header() {
-//   const [isOpen, setIsOpen] = useState(false)
-//   const linkClass = ({ isActive }) =>
-//     isActive ? "text-[#00D4AA] " : "text-white ";
-
-//   const navigate = useNavigate()
-
-//   return (
-//     <div className="bg-[#434c5d] px-[60px] py-[20px] sticky inset-0 z-50 ">
-//       <nav className="bg-[#2E374766] flex justify-between items-center gap-2 px-[70px] py-[31px] rounded-[18px] max-w-7xl mx-auto">
-//         <div onClick={() => navigate('/')}>
-//           <img
-//             src="images/logo.png"
-//             alt="Click to home"
-//             className="h-8 sm:h-10 md:h-12 w-auto object-contain cursor-pointer"
-//           />
-//         </div>
-//         <div className="flex gap-4 items-center">
-//           <NavLink to="/features" className={linkClass}>
-//             Feature
-//           </NavLink>
-//           <NavLink to="/howItWorks" className={linkClass}>
-//             How it works
-//           </NavLink>
-//           <NavLink to="/blog" className={linkClass}>
-//             Blog
-//           </NavLink>
-//           <NavLink to="/faq" className={linkClass}>
-//             FAQ
-//           </NavLink>
-//           <a href="/app.apk" download className=" cursor-pointer">
-//             <button
-//               type="button"
-//               className="cursor-pointer text-black px-[32px] py-[16px] bg-[#009875]  rounded-lg"
-//             >
-//               Download
-//             </button>
-//           </a>
-//         </div>
-//         {/* mobile view */}
-//         <div>
-//           {isOpen ? <img src="/images/menu.png" alt="menu"  /> : <img src="/images/cancel.png" alt="cancel" />}
-//         </div>
-//       </nav>
-//     </div>
-//   );
-// }
-
-// export default Header;
 
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import DownloadPage from "./modals/DownloadPage"
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false)
+
   const navigate = useNavigate();
 
   const linkClass = ({ isActive }) =>
@@ -92,14 +44,15 @@ function Header() {
             FAQ
           </NavLink>
 
-          <a href="/app.apk" download>
+          {/* <a href="/app.apk" download> */}
             <button
               type="button"
+              onClick={() => setOpenModal(true)}
               className="text-black px-[32px] py-[14px] bg-[#009875] rounded-lg hover:opacity-90 transition text-white"
             >
               Get App
             </button>
-          </a>
+          {/* </a> */}
         </div>
 
         {/* Mobile Menu Icon */}
@@ -157,17 +110,19 @@ function Header() {
               FAQ
             </NavLink>
 
-            <a href="/app.apk" download>
+            {/* <a href="/app.apk" download> */}
               <button
                 type="button"
-                className="w-full text-black py-[14px] bg-[#009875] rounded-lg"
+                onClick={() => setOpenModal(true)}
+                className="w-full text-black py-[14px] bg-[#009875] rounded-lg cursor-pointer"
               >
                 Get App
               </button>
-            </a>
+            {/* </a> */}
           </div>
         )}
       </nav>
+      <DownloadPage isOpen={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 }

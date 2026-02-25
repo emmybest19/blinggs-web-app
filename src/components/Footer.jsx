@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   FaTwitter,
   FaInstagram,
@@ -5,7 +6,20 @@ import {
   FaFacebookF,
 } from "react-icons/fa";
 
+import DownloadPage from "./modals/DownloadPage";
+import { useNavigate } from "react-router-dom";
+import TermsModal from "./modals/TermModal";
+import CookiesModal from "./modals/CookiesModal";
+import AboutModal from "./modals/AboutUs";
+import PrivacyPolicyModal from "./modals/PrivacyPolicyModal"
+
 function Footer() {
+  const [openModal, setOpenModal] = useState(false);
+  const [termModal, setTermModal] = useState(false);
+  const [cookiesModal, setCookiesModal] = useState(false);
+  const [aboutModal, setAboutModal] = useState(false);
+  const [policyModal, setPolicyModal] = useState(false)
+  const navigate = useNavigate();
   return (
     <footer className="bg-[#0F1B2D] text-gray-300">
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -54,24 +68,36 @@ function Footer() {
             <h4 className="text-white font-semibold mb-6">Product</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => navigate("/features")}
+                  className="hover:text-white"
+                >
                   Features
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => navigate("/howItWorks")}
+                  className="hover:text-white"
+                >
                   How it Works
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => navigate("/blog")}
+                  className="hover:text-white"
+                >
+                  Blog
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => setOpenModal(true)}
+                  className="hover:text-white"
+                >
                   Download
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
-                  Security
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -81,9 +107,12 @@ function Footer() {
             <h4 className="text-white font-semibold mb-6">About Us</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => setAboutModal(true)}
+                  className="hover:text-white"
+                >
                   About Us
-                </a>
+                </button>
               </li>
               <li>
                 <a href="#" className="hover:text-white">
@@ -108,19 +137,25 @@ function Footer() {
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <a href="#" className="hover:text-white">
+                <button onClick={() => setPolicyModal(true)} className="hover:text-white">
                   Privacy Policy
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => setTermModal(true)}
+                  className="hover:text-white"
+                >
                   Terms of Service
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#" className="hover:text-white">
+                <button
+                  onClick={() => setCookiesModal(true)}
+                  className="hover:text-white"
+                >
                   Cookie Policy
-                </a>
+                </button>
               </li>
             </ul>
           </div>
@@ -132,16 +167,24 @@ function Footer() {
             © 2026 Zeta Technology Limited. All rights reserved. Blingg is a
             product of Zeta Technology Limited.
           </p>
-          <div className="flex gap-6">
+          {/* <div className="flex gap-6">
             <a href="#" className="hover:text-white">
               Privacy
             </a>
             <a href="#" className="hover:text-white">
               Terms
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
+      <DownloadPage isOpen={openModal} onClose={() => setOpenModal(false)} />
+      <TermsModal isOpen={termModal} onClose={() => setTermModal(false)} />
+      <CookiesModal
+        isOpen={cookiesModal}
+        onClose={() => setCookiesModal(false)}
+      />
+      <AboutModal isOpen={aboutModal} onClose={() => setAboutModal(false)} />
+        <PrivacyPolicyModal isOpen={policyModal} onClose={() => setPolicyModal(false)} />
     </footer>
   );
 }
