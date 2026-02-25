@@ -30,7 +30,7 @@ export default function ContactSection() {
                   Visit Us
                 </h3>
                 <p className="mt-1 text-sm text-gray-600">
-                  123 Innovation Drive, Lekki Phase 1, Lagos, Nigeria
+                  14 Diamond Hill Calabar, Nigeria
                 </p>
               </div>
             </div>

@@ -32,7 +32,7 @@ const faqs = [
     items: [
       {
         q: "What is the difference between Personal and Public groups?",
-        a: "Personal groups are managed by a single admin. Public groups require approval from three designated signatories for withdrawals, making them safer for larger communities.",
+        a: "Personal groups are managed by a single admin. Public groups require approval from 60% of group members for withdrawals, making them safer for larger communities.",
       },
       {
         q: "Can I leave a group contribution?",

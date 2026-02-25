@@ -92,7 +92,7 @@ export default function SaveTogether() {
               <div>
                 <p className="font-medium">Multi‑Sig Approval</p>
                 <p className="text-sm text-emerald-200">
-                  Requires 3 approvals to withdraw funds.
+                  Requires 60% of members approval to withdraw funds
                 </p>
               </div>
             </div>
