@@ -2,10 +2,10 @@ import React from "react";
 
 export default function SaveTogether() {
   return (
-    <section className="w-full px-4 py-12 md:py-20 bg-white rounded-2xl ">
+    <section className="w-full px-4 py-12 md:py-20 bg-white rounded-3xl animate-fade-in-up">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="mb-10">
+        <div className="mb-10 animate-fade-in-down">
           <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
             Two ways to save together
           </h2>
@@ -17,7 +17,7 @@ export default function SaveTogether() {
         {/* Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
           {/* Personal Groups */}
-          <div className="relative rounded-2xl bg-slate-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between text-sm md:text-lg">
+          <div className="relative rounded-3xl bg-slate-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between text-sm md:text-lg card-hover animate-fade-in-left">
             <div>
               <span className="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700">
                 Private Control
@@ -66,7 +66,7 @@ export default function SaveTogether() {
           </div>
 
           {/* Public Groups */}
-          <div className="relative rounded-2xl bg-emerald-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between">
+          <div className="relative rounded-3xl bg-emerald-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between card-hover animate-fade-in-right">
             <div>
               <span className="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-emerald-200 text-emerald-900">
                 Community Trust

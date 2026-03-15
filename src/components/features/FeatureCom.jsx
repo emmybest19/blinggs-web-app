@@ -1,9 +1,16 @@
 export default function FeaturesGrid() {
   return (
-    <section className="w-full md:px-4 py-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
-        {/* Chat & Pay */}
-        <div className="relative bg-white rounded-2xl p-6 md:p-8 shadow-sm overflow-hidden  col-span-2 space-y-2">
+    <section className="w-full md:px-4 py-12 animate-fade-in-up">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="mb-12 animate-fade-in-down">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Powerful Features</h2>
+          <p className="text-white/60">Everything you need to manage money and connect with others</p>
+        </div>
+
+        <div className="flex flex-col md:grid md:grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
+          {/* Chat & Pay */}
+          <div className="relative bg-white rounded-3xl p-6 md:p-8 shadow-lg overflow-hidden col-span-2 space-y-2 card-hover animate-fade-in-left" style={{animationDelay: '0.1s'}}>
           <div>
             <img src="/images/chat.png" alt="" className="w-12" />
           </div>
@@ -38,8 +45,8 @@ export default function FeaturesGrid() {
           />
         </div>
 
-        {/* Smart Payments */}
-        <div className="bg-indigo-50 rounded-2xl p-6 md:p-8 shadow-sm flex flex-col justify-between text-sm md:text-lg">
+          {/* Smart Payments */}
+          <div className="bg-indigo-50 rounded-3xl p-6 md:p-8 shadow-lg flex flex-col justify-between text-sm md:text-lg card-hover animate-fade-in-up-delay-1" style={{animationDelay: '0.2s'}}>
           <div>
             <div>
               <img src="/images/smart.png" alt="" className="w-12" />
@@ -59,20 +66,11 @@ export default function FeaturesGrid() {
             No surprises.
           </p>
 
-          {/* <div className="space-y-3">
-            <div className="bg-white rounded-xl p-4 flex justify-between text-sm">
-              <span>Electric Bill</span>
-              <span className="font-medium">₦15,000</span>
-            </div>
-            <div className="bg-white rounded-xl p-4 flex justify-between text-sm">
-              <span>Airtime</span>
-              <span className="font-medium">₦2,000</span>
-            </div>
-          </div> */}
+        
         </div>
 
-        {/* Group Power */}
-        <div className="bg-slate-900 rounded-2xl p-6 md:p-8 text-white shadow-sm relative text-sm md:text-lg">
+          {/* Group Power */}
+          <div className="bg-slate-900 rounded-3xl p-6 md:p-8 text-white shadow-lg relative text-sm md:text-lg card-hover animate-fade-in-right" style={{animationDelay: '0.3s'}}>
           <div className="flex justify-between items-center ">
             <div className="flex flex-col gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center">
@@ -100,8 +98,8 @@ export default function FeaturesGrid() {
           />
         </div>
 
-        {/* Crypto to Cash */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row gap-6 items-start md:items-center col-span-2 md:text-lg">
+          {/* Crypto to Cash */}
+          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg flex flex-col md:flex-row gap-6 items-start md:items-center col-span-2 md:text-lg card-hover animate-fade-in-up-delay-2" style={{animationDelay: '0.4s'}}>
           <div className="flex-1 ">
             <img src="/images/crypto.png" alt="" className="w-14" />
             <h3 className="text-xl mt-2 md:text-2xl font-semibold text-slate-900 mb-3">
@@ -123,7 +121,7 @@ export default function FeaturesGrid() {
             </div>
           </div>
 
-          <div className="w-full md:w-80 bg-slate-900 text-white rounded-2xl p-5">
+            <div className="w-full md:w-80 bg-slate-900 text-white rounded-2xl p-5 hover:shadow-2xl transition-all duration-500">
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center gap-1">
                 <img src="/images/crypto2.png" alt="" className="w-12" />

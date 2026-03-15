@@ -23,10 +23,10 @@ export default function WhatYouCanDo() {
   ];
 
   return (
-    <section className="w-full bg-[#434c5d] py-20 px-4 mt-[30px] rounded-2xl">
+    <section className="w-full bg-[#434c5d] py-20 px-4 mt-[30px] rounded-3xl animate-fade-in-up">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <h2 className="text-center text-3xl md:text-4xl font-semibold text-white mb-14">
+        <h2 className="text-center text-3xl md:text-4xl font-semibold text-white mb-14 animate-fade-in-down">
           What can you do with Blingg?
         </h2>
 
@@ -35,7 +35,8 @@ export default function WhatYouCanDo() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`${feature.bg} rounded-3xl p-8 shadow-xl transition-transform duration-300 hover:-translate-y-1`}
+              className={`${feature.bg} rounded-3xl p-8 shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:shadow-2xl animate-fade-in-up card-hover`}
+              style={{animationDelay: `${index * 0.15}s`}}
             >
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 {feature.title}

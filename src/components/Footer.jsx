@@ -116,11 +116,6 @@ function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-white">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white">
                   Careers
                 </a>
               </li>

@@ -59,7 +59,7 @@ function AccordionItem({ q, a }) {
         </span>
       </button>
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
           open ? "max-h-40 opacity-100 pb-4" : "max-h-0 opacity-0"
         }`}
       >

@@ -4,35 +4,41 @@ export default function LegalModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm modal-overlay"
         onClick={onClose}
       ></div>
 
       {/* Modal Container */}
-      <div className="relative bg-white w-full max-w-5xl h-[90vh] rounded-2xl shadow-2xl z-10 flex flex-col">
+      <div className="relative bg-white w-full max-w-5xl h-[90vh] rounded-3xl shadow-2xl z-10 flex flex-col modal-content overflow-hidden">
 
         {/* Header */}
-        <div className="p-6 border-b">
-          <h2 className="text-2xl font-bold">
-            BLINGG — Legal & Policies
-          </h2>
-          <p className="text-sm text-gray-500">
-            Last Updated: [DATE]
-          </p>
+        <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-emerald-50 flex items-center justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">
+              BLINGG — Legal & Policies
+            </h2>
+            <p className="text-sm text-gray-500 mt-1">
+              Last Updated: March 2026
+            </p>
+          </div>
+
+          <button
+            onClick={onClose}
+            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all duration-300 hover-scale"
+          >
+            ✕
+          </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-6 overflow-y-auto text-sm text-gray-700 space-y-6 leading-relaxed">
-
+        <div className="p-6 overflow-y-auto text-sm text-gray-700 space-y-6 leading-relaxed flex-1">
           {/* PRIVACY POLICY */}
           <section className="space-y-3">
-            <h3 className="text-lg font-semibold">
-              1. Privacy Policy
-            </h3>
+            <h3 className="text-lg font-semibold">1. Privacy Policy</h3>
 
             <p>
               This Privacy Policy explains how Blingg collects, uses, shares,
@@ -63,9 +69,7 @@ export default function LegalModal({ isOpen, onClose }) {
               <li>Comply with legal obligations</li>
             </ul>
 
-            <p>
-              We do not sell personal data.
-            </p>
+            <p>We do not sell personal data.</p>
           </section>
 
           {/* ACCEPTABLE USE POLICY */}
@@ -97,9 +101,7 @@ export default function LegalModal({ isOpen, onClose }) {
               3. Refunds, Reversals & Disputes
             </h3>
 
-            <p>
-              Internal transfers may be irreversible once completed.
-            </p>
+            <p>Internal transfers may be irreversible once completed.</p>
 
             <p>
               Bank transfers depend on providers and reconciliation timelines.
@@ -124,9 +126,10 @@ export default function LegalModal({ isOpen, onClose }) {
             </h3>
 
             <p>
-              Digital assets are volatile and may lose value.
-              Network congestion and confirmations may delay transactions.
-              You are responsible for verifying wallet addresses and understanding risks.
+              Digital assets are volatile and may lose value. Network
+              congestion and confirmations may delay transactions. You are
+              responsible for verifying wallet addresses and understanding
+              risks.
             </p>
           </section>
 
@@ -182,26 +185,24 @@ export default function LegalModal({ isOpen, onClose }) {
               Support Hours: [HOURS]
             </p>
           </section>
-
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t flex justify-end gap-4">
+        <div className="p-6 border-t border-gray-200 bg-gray-50 flex justify-end gap-4">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-lg border border-gray-300"
+            className="px-6 py-2 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-all duration-300 hover-scale"
           >
             Close
           </button>
 
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-lg bg-black text-white"
+            className="px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-700 hover:to-emerald-700 text-white font-medium transition-all duration-300 hover-scale"
           >
             Accept
           </button>
         </div>
-
       </div>
     </div>
   );

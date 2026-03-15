@@ -4,29 +4,37 @@ export default function TermsModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       
-      {/* Overlay */}
+      {/* Overlay with animation */}
       <div
-        className="absolute inset-0 bg-black/70"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm modal-overlay"
         onClick={onClose}
       ></div>
 
-      {/* Modal */}
-      <div className="relative bg-white w-full max-w-4xl h-[85vh] rounded-2xl shadow-2xl z-10 flex flex-col">
+      {/* Modal with animation */}
+      <div className="relative bg-white w-full max-w-4xl h-[85vh] rounded-3xl shadow-2xl z-10 flex flex-col modal-content overflow-hidden">
 
         {/* Header */}
-        <div className="p-6 border-b">
-          <h2 className="text-2xl font-bold">
-            BLINGG — Terms of Service
-          </h2>
-          <p className="text-sm text-gray-500">
-            Last Updated: [DATE]
-          </p>
+        <div className="p-6 border-b border-gray-200 bg-gradient-to-r from-indigo-50 to-emerald-50 flex items-center justify-between">
+          <div>
+            <h2 className="text-2xl font-bold text-gray-900">
+              BLINGG — Terms of Service
+            </h2>
+            <p className="text-sm text-gray-500 mt-1">
+              Last Updated: March 2026
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-all duration-300 hover-scale"
+          >
+            ✕
+          </button>
         </div>
 
         {/* Scrollable Content */}
-        <div className="p-6 overflow-y-auto text-sm text-gray-700 space-y-4">
+        <div className="p-6 overflow-y-auto text-sm text-gray-700 space-y-4 flex-1">
 
           <p>
             These Terms of Service govern your access to and use of the Blingg
@@ -96,26 +104,26 @@ export default function TermsModal({ isOpen, onClose }) {
 
           <h3 className="font-semibold text-base">Contact</h3>
           <p>
-            Zeta Technology Limited  
-            14 Diamond Hill, Calabar, Nigeria  
-            support@blinggapp.com  
+            Zeta Technology Limited<br/>
+            14 Diamond Hill, Calabar, Nigeria<br/>
+            support@blinggapp.com<br/>
             contact@blinggapp.com
           </p>
 
         </div>
 
         {/* Footer */}
-        <div className="p-6 border-t flex justify-end gap-4">
+        <div className="p-6 border-t border-gray-200 bg-gray-50 flex justify-end gap-4">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-lg border border-gray-300"
+            className="px-6 py-2 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-all duration-300 hover-scale"
           >
             Close
           </button>
 
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-lg bg-black text-white"
+            className="px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 to-emerald-600 hover:from-indigo-700 hover:to-emerald-700 text-white font-medium transition-all duration-300 hover-scale"
           >
             Accept
           </button>

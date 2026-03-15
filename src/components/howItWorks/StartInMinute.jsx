@@ -23,10 +23,10 @@ export default function StartInMinutes() {
   ];
 
   return (
-    <section className="w-full bg-white py-10 px-10 rounded-2xl">
+    <section className="w-full bg-white py-10 px-10 rounded-3xl animate-fade-in-up">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-down">
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
             Start in minutes
           </h2>
@@ -38,14 +38,15 @@ export default function StartInMinutes() {
         {/* Steps */}
         <div className="relative flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8">
           {/* Horizontal line (desktop only) */}
-          <div className="hidden md:block absolute top-11 left-0 right-0 h-px bg-indigo-200" />
+          <div className="hidden md:block absolute top-11 left-0 right-0 h-px bg-indigo-200 animate-pulse" />
 
-          {steps.map((step) => (
+          {steps.map((step, idx) => (
             <div
               key={step.id}
-              className="relative z-10 flex flex-col items-center text-center max-w-xs"
+              className="relative z-10 flex flex-col items-center text-center max-w-xs animate-fade-in-up card-hover"
+              style={{animationDelay: `${idx * 0.15}s`}}
             >
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shadow-md">
+              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
                 {step.icon}
               </div>
 

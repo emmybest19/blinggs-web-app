@@ -3,20 +3,20 @@ import React from "react";
 export default function CTASection() {
   return (
     <section className="w-full px-4 mt-[30px] pb-[30px] flex justify-center">
-      <div className="relative w-full max-w-7xl rounded-3xl overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b]">
+      <div className="relative w-full max-w-7xl rounded-3xl overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#111827] to-[#1e293b] card-hover animate-fade-in-up">
         {/* subtle glow */}
         <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 via-transparent to-emerald-500/10" />
 
         <div className="relative z-10 px-6 sm:px-10 md:px-20 py-16 text-center text-white">
           {/* Badge */}
-          <div className="flex justify-center mb-6">
-            <span className="px-4 py-1.5 rounded-full text-sm bg-indigo-500/20 text-indigo-300">
+          <div className="flex justify-center mb-6 animate-fade-in-down">
+            <span className="px-4 py-1.5 rounded-full text-sm bg-indigo-500/20 text-indigo-300 animate-pulse">
               Available soon
             </span>
           </div>
 
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in-up-delay-1">
             Ready to upgrade your <br className="hidden sm:block" />
             financial life?
           </h2>
