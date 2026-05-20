@@ -198,7 +198,7 @@ export default function ComingSoonModal({ isOpen, onClose }) {
 
         <p className="mt-4 text-sm leading-7 text-white/60">
           We’re currently developing the app, Blingg will be launched and ready
-          to se shortly.
+          to use shortly.
         </p>
 
         {/* Button */}
