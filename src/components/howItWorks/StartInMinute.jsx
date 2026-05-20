@@ -1,26 +1,26 @@
-import React from "react";
+import React from 'react'
 
 export default function StartInMinutes() {
   const steps = [
     {
       id: 1,
-      title: "Download",
-      description: "Get Bling from your app store.",
-      icon: (<img src="/images/download.png" alt="" />)
+      title: 'Download',
+      description: 'Get Bling from your app store.',
+      icon: <img src="/images/download.png" alt="" />,
     },
     {
       id: 2,
-      title: "Sign Up",
-      description: "Create account in 2 minutes.",
-      icon: (<img src="/images/signup.png" alt="" />),
+      title: 'Sign Up',
+      description: 'Create account in 2 minutes.',
+      icon: <img src="/images/signup.png" alt="" />,
     },
     {
       id: 3,
-      title: "Transact",
-      description: "Start sending money instantly.",
-      icon: (<img src="/images/transact.png" alt="" />),
+      title: 'Transact',
+      description: 'Start sending money instantly.',
+      icon: <img src="/images/transact.png" alt="" />,
     },
-  ];
+  ]
 
   return (
     <section className="w-full bg-white py-10 px-10 rounded-3xl animate-fade-in-up">
@@ -44,7 +44,7 @@ export default function StartInMinutes() {
             <div
               key={step.id}
               className="relative z-10 flex flex-col items-center text-center max-w-xs animate-fade-in-up card-hover"
-              style={{animationDelay: `${idx * 0.15}s`}}
+              style={{ animationDelay: `${idx * 0.15}s` }}
             >
               <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
                 {step.icon}
@@ -62,5 +62,5 @@ export default function StartInMinutes() {
         </div>
       </div>
     </section>
-  );
+  )
 }

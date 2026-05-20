@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function CTASection() {
   return (
@@ -23,8 +23,8 @@ export default function CTASection() {
 
           {/* Description */}
           <p className="mt-6 text-base sm:text-lg md:text-xl text-white/70 max-w-3xl mx-auto">
-            Join millions of users who trust Blingg for their daily payments,
-            group savings, and crypto transactions.
+            Join millions of users who trust Blingg for their daily payments,and
+            group savings.
           </p>
 
           {/* Store buttons */}
@@ -54,5 +54,5 @@ export default function CTASection() {
         </div>
       </div>
     </section>
-  );
+  )
 }
