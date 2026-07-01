@@ -27,9 +27,7 @@ function Footer() {
             </div>
 
             <p className="mb-8 max-w-md text-sm leading-relaxed">
-              The all-in-one super app for messaging, payments, and group
-              contributions. Send money, chat with friends, and grow your wealth
-              together.
+              Connect, communicate, and pay with ease. Blingg brings intelligent messaging, seamless payments, and group contributions together in one trusted platform.
             </p>
 
             {/* Social Icons */}

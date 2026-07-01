@@ -69,6 +69,8 @@ import BlogDynamic from './pages/BlogDynamic'
 import MainLayout from './layout/MainLayout'
 import SubAdmin from './layout/SubAdmin'
 
+import ScrollToTop from './components/ScrollToTop'
+
 import NotFound from './pages/NotFound'
 import ArticleEditor from './pages/admin/ArticleEditor'
 
@@ -80,6 +82,7 @@ import CookiesPolicyPage from './pages/CookiesPolicy'
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         {/* Main Website Layout */}
         <Route element={<MainLayout />}>

@@ -1,90 +1,90 @@
-import React from 'react'
+import React from "react";
 
 const sections = [
   {
-    title: '1. Eligibility',
+    title: "1. Eligibility",
     content: [
-      'To use Blingg, you must:',
+      "To use Blingg, you must:",
       [
-        'Be legally capable of entering a binding agreement.',
-        'Be at least 18 years old, or the age of majority under applicable law.',
-        'Provide accurate and complete registration information.',
-        'Use the Services only where legally permitted.',
+        "Be legally capable of entering a binding agreement.",
+        "Be at least 18 years old, or the age of majority under applicable law.",
+        "Provide accurate and complete registration information.",
+        "Use the Services only where legally permitted.",
       ],
-      'We may request identity verification at any time.',
+      "We may request identity verification at any time.",
     ],
   },
   {
-    title: '2. Account Registration',
+    title: "2. Account Registration",
     content: [
-      'You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account.',
-      'You agree to:',
+      "You are responsible for maintaining the confidentiality of your account credentials and for all activity under your account.",
+      "You agree to:",
       [
-        'Provide accurate, current, and complete information.',
-        'Update your information when necessary.',
-        'Maintain the security of your device and login credentials.',
-        'Notify us immediately of unauthorized use.',
+        "Provide accurate, current, and complete information.",
+        "Update your information when necessary.",
+        "Maintain the security of your device and login credentials.",
+        "Notify us immediately of unauthorized use.",
       ],
-      'We may suspend or terminate accounts that contain false information or present security, fraud, or compliance risks.',
+      "We may suspend or terminate accounts that contain false information or present security, fraud, or compliance risks.",
     ],
   },
   {
-    title: '3. Description of Services',
+    title: "3. Description of Services",
     content: [
-      'Blingg may provide services including, where available:',
+      "Blingg may provide services including, where available:",
       [
-        'Messaging and communication tools',
-        'Wallet and payment-related features',
-        'Transfers between users',
-        'Bank transfer integrations',
-        'Group contribution features',
-        'Community and social features',
-        'Notifications and updates',
-        'Other services introduced from time to time',
+        "Messaging and communication tools",
+        "Wallet and payment-related features",
+        "Transfers between users",
+        "Bank transfer integrations",
+        "Group contribution features",
+        "Community and social features",
+        "Notifications and updates",
+        "Other services introduced from time to time",
       ],
-      'Some services may be offered through regulated third-party partners.',
-      'Availability may vary by region, eligibility, verification status, and legal requirements.',
+      "Some services may be offered through regulated third-party partners.",
+      "Availability may vary by region, eligibility, verification status, and legal requirements.",
     ],
   },
   {
-    title: '4. Financial Services Disclaimer',
+    title: "4. Financial Services Disclaimer",
     content: [
-      'Blingg is a technology platform. Certain payment, banking, verification, or transfer functions may be provided by licensed third-party partners.',
-      'We do not guarantee uninterrupted availability of partner services.',
-      'You authorize us to transmit required data to our partners for service delivery, fraud prevention, and compliance purposes.',
+      "Blingg is a technology platform. Certain payment, banking, verification, or transfer functions may be provided by licensed third-party partners.",
+      "We do not guarantee uninterrupted availability of partner services.",
+      "You authorize us to transmit required data to our partners for service delivery, fraud prevention, and compliance purposes.",
     ],
   },
   {
-    title: '5. User Obligations',
+    title: "5. User Obligations",
     content: [
-      'You agree not to:',
+      "You agree not to:",
       [
-        'Use Blingg for unlawful, fraudulent, deceptive, or abusive purposes.',
-        'Impersonate any person or entity.',
-        'Violate sanctions, AML, anti-fraud, or financial crime laws.',
-        'Upload malware, malicious code, or harmful content.',
-        'Interfere with platform operations.',
-        'Harvest user data without consent.',
-        'Use automated bots without authorization.',
-        'Infringe intellectual property rights.',
-        'Circumvent fees, limits, or security controls.',
+        "Use Blingg for unlawful, fraudulent, deceptive, or abusive purposes.",
+        "Impersonate any person or entity.",
+        "Violate sanctions, AML, anti-fraud, or financial crime laws.",
+        "Upload malware, malicious code, or harmful content.",
+        "Interfere with platform operations.",
+        "Harvest user data without consent.",
+        "Use automated bots without authorization.",
+        "Infringe intellectual property rights.",
+        "Circumvent fees, limits, or security controls.",
       ],
     ],
   },
   {
-    title: '6. Payments, Transfers & Fees',
+    title: "6. Payments, Transfers & Fees",
     content: [
-      'Where applicable:',
+      "Where applicable:",
       [
-        'Fees may apply to certain transactions or premium features.',
-        'Applicable fees will be disclosed in-app, on our website, or before transaction confirmation.',
-        'Transactions may be subject to verification, limits, delays, reversals, or compliance review.',
-        'We may decline, delay, suspend, or reverse transactions where required by law, partner rules, fraud prevention, technical issues, or risk management.',
-        'Completed transactions may be irreversible except where required by law or operational error correction.',
+        "Fees may apply to certain transactions or premium features.",
+        "Applicable fees will be disclosed in-app, on our website, or before transaction confirmation.",
+        "Transactions may be subject to verification, limits, delays, reversals, or compliance review.",
+        "We may decline, delay, suspend, or reverse transactions where required by law, partner rules, fraud prevention, technical issues, or risk management.",
+        "Completed transactions may be irreversible except where required by law or operational error correction.",
       ],
     ],
   },
-]
+];
 
 export default function TermsOfServicePage() {
   return (
@@ -129,7 +129,7 @@ export default function TermsOfServicePage() {
         <div className="mt-8 rounded-[32px] border border-white/10 bg-[#111827] p-6 sm:p-8">
           <p className="text-sm leading-8 text-white/70 sm:text-base">
             Welcome to <span className="font-medium text-white">Blingg</span>, a
-            digital platform operated by{' '}
+            digital platform operated by{" "}
             <span className="text-emerald-400">
               Zeta Technology Limited (RC No. 9293143)
             </span>
@@ -188,7 +188,7 @@ export default function TermsOfServicePage() {
                             </li>
                           ))}
                         </ul>
-                      )
+                      );
                     }
 
                     return (
@@ -198,7 +198,7 @@ export default function TermsOfServicePage() {
                       >
                         {item}
                       </p>
-                    )
+                    );
                   })}
                 </div>
               </section>
@@ -274,5 +274,5 @@ export default function TermsOfServicePage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
