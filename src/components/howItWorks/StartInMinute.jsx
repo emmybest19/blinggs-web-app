@@ -1,65 +1,95 @@
 import React from 'react'
+import { Download, UserPlus, Send, Sparkles, ArrowRight } from 'lucide-react'
 
 export default function StartInMinutes() {
   const steps = [
     {
       id: 1,
-      title: 'Download',
-      description: 'Get Bling from your app store.',
-      icon: <img src="/images/download.png" alt="" />,
+      stepNumber: '01',
+      title: 'Download App',
+      description: 'Get Blingg instantly from iOS App Store or Google Play Store.',
+      icon: <Download className="w-7 h-7 text-[#00D4AA]" />,
+      badge: 'Free Download'
     },
     {
       id: 2,
-      title: 'Sign Up',
-      description: 'Create account in 2 minutes.',
-      icon: <img src="/images/signup.png" alt="" />,
+      stepNumber: '02',
+      title: 'Quick Sign Up',
+      description: 'Create your account in under 2 minutes with zero paper paperwork.',
+      icon: <UserPlus className="w-7 h-7 text-[#00D4AA]" />,
+      badge: 'Instant KYC'
     },
     {
       id: 3,
-      title: 'Transact',
-      description: 'Start sending money instantly.',
-      icon: <img src="/images/transact.png" alt="" />,
+      stepNumber: '03',
+      title: 'Chat & Transact',
+      description: 'Start messaging friends and sending money seamlessly.',
+      icon: <Send className="w-7 h-7 text-[#00D4AA]" />,
+      badge: 'Instant Transfer'
     },
   ]
 
   return (
-    <section className="w-full bg-white py-10 px-10 rounded-3xl animate-fade-in-up">
-      <div className="mx-auto max-w-6xl">
+    <section className="w-full bg-[#0b1220] py-20 px-4 md:px-8 text-white font-sans">
+      <div className="max-w-7xl mx-auto space-y-16">
+        
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-down">
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
-            Start in minutes
+        <div className="text-center max-w-2xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 bg-[#009875]/15 border border-[#009875]/30 px-4 py-1.5 rounded-full text-xs font-semibold text-[#00D4AA] uppercase tracking-wide">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Simple Onboarding</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
+            Start in Minutes
           </h2>
-          <p className="mt-4 text-gray-500 text-base md:text-lg">
-            No paperwork, no long queues. Just download and go.
+          <p className="text-slate-400 text-base md:text-lg">
+            No paperwork, no long queues, no hassle. Just download and go.
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="relative flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8">
-          {/* Horizontal line (desktop only) */}
-          <div className="hidden md:block absolute top-11 left-0 right-0 h-px bg-indigo-200 animate-pulse" />
+        {/* Steps Grid Container */}
+        <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+          {/* Connecting Gradient Line across steps (Desktop only) */}
+          <div className="hidden md:block absolute top-1/2 left-[15%] right-[15%] -translate-y-6 h-[2px] bg-gradient-to-r from-[#009875]/0 via-[#00D4AA]/40 to-[#009875]/0 z-0 pointer-events-none" />
 
-          {steps.map((step, idx) => (
+          {steps.map((step) => (
             <div
               key={step.id}
-              className="relative z-10 flex flex-col items-center text-center max-w-xs animate-fade-in-up card-hover"
-              style={{ animationDelay: `${idx * 0.15}s` }}
+              className="relative z-10 bg-[#0f1b2d] border border-white/10 hover:border-[#00D4AA]/40 rounded-3xl p-8 flex flex-col justify-between space-y-8 shadow-2xl transition-all duration-300 hover:-translate-y-2 group"
             >
-              <div className="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-indigo-50 text-indigo-600 shadow-md hover:shadow-lg hover:scale-110 transition-all duration-300">
-                {step.icon}
+              {/* Top Row: Icon & Step Badge */}
+              <div className="flex items-center justify-between">
+                <div className="w-16 h-16 rounded-2xl bg-[#009875]/15 border border-[#009875]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#009875]/25 transition-all duration-300 shadow-lg">
+                  {step.icon}
+                </div>
+                <span className="text-3xl font-extrabold text-white/15 font-mono group-hover:text-[#00D4AA]/30 transition-colors">
+                  {step.stepNumber}
+                </span>
               </div>
 
-              <h3 className="text-lg font-semibold text-gray-900">
-                {step.id}. {step.title}
-              </h3>
+              {/* Step Content */}
+              <div className="space-y-3">
+                <div className="inline-block px-2.5 py-0.5 rounded-md bg-white/5 text-[11px] font-semibold text-slate-300 border border-white/10">
+                  {step.badge}
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white group-hover:text-[#00D4AA] transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
 
-              <p className="mt-2 text-gray-500 text-sm md:text-base">
-                {step.description}
-              </p>
+              {/* Bottom Decorative Arrow */}
+              <div className="pt-2 border-t border-white/5 flex items-center justify-end text-slate-500 group-hover:text-[#00D4AA] transition-colors">
+                <ArrowRight className="w-4 h-4" />
+              </div>
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   )
