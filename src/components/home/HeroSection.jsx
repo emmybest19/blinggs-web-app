@@ -1,25 +1,70 @@
 import React from 'react'
+import { ArrowDownIcon, CheckCheckIcon, Globe2Icon, SparklesIcon } from 'lucide-react'
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen p-4 rounded-3xl bg-[#0b1220] text-white flex items-center justify-center overflow-hidden relative">
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-3 gap-6 relative z-10">
-        {/* Left Main Section */}
-        <div className="lg:col-span-2 bg-gradient-to-br from-[#0f1b2d] to-[#0b1220] rounded-3xl p-8 md:p-12 flex flex-col justify-between relative card-hover animate-fade-in-left">
-          <div>
-            <span className="inline-flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full text-sm mb-8 animate-fade-in-down">
-              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-              Messaging & Community Payments Made Simple
-            </span>
+    <section className="relative w-full bg-[#0b1220] py-6 px-4 md:px-8 font-sans overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Card Container */}
+        <div className="relative w-full min-h-155 rounded-4xl overflow-hidden bg-linear-to-br from-[#0f1b2d] to-[#0b1220] border border-white/10 shadow-2xl flex items-center p-6 md:p-12 lg:p-16">
+          
+          {/* Background Glows */}
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <h1 className="text-4xl md:text-6xl font-semibold leading-tight animate-fade-in-up-delay-1">
+          {/* WhatsApp-Style Floating UI Badges */}
+          <div className="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 z-20 w-80 space-y-4 pointer-events-none">
+            
+            {/* Floating Community Badge */}
+            <div className="bg-[#0f1b2d]/90 backdrop-blur-md border border-white/10 px-4 py-3 rounded-full shadow-xl flex items-center justify-between text-xs text-white">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-semibold text-white">Community Payments</span>
+              </div>
+              <span className="text-emerald-400 font-medium flex items-center gap-1">
+                <Globe2Icon className="w-3.5 h-3.5" /> 12+ Countries
+              </span>
+            </div>
+
+            {/* Chat Bubble 1 */}
+            <div className="bg-emerald-500/20 backdrop-blur-md border border-emerald-500/30 text-white p-3.5 rounded-2xl rounded-tr-none shadow-lg text-xs ml-auto max-w-[240px]">
+              <p className="text-emerald-300 font-medium mb-1 flex items-center justify-between">
+                <span>Blingg Transfer</span>
+                <SparklesIcon className="w-3.5 h-3.5 text-emerald-400" />
+              </p>
+              Send, receive instantly with zero hidden fees!
+              <div className="flex items-center justify-end gap-1 text-[10px] text-white/50 mt-1">
+                <span>11:53</span>
+                <CheckCheckIcon className="w-3.5 h-3.5 text-emerald-400" />
+              </div>
+            </div>
+
+            {/* Chat Bubble 2 */}
+            <div className="bg-white/10 backdrop-blur-md border border-white/10 text-white p-3.5 rounded-2xl rounded-tl-none shadow-lg text-xs max-w-[240px]">
+              <p className="text-indigo-300 font-semibold mb-1">Join Millions</p>
+              Message. Pay. Build Value Together.
+              <span className="block text-[10px] text-white/40 text-right mt-1">11:59</span>
+            </div>
+          </div>
+
+          {/* Hero Content */}
+          <div className="relative z-10 max-w-2xl text-white">
+            {/* Top Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 border border-white/10 px-4 py-2 rounded-full text-xs md:text-sm mb-8 backdrop-blur-sm">
+              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
+              <span>Messaging & Community Payments Made Simple</span>
+            </div>
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
               Message. Pay. <br />
-              <span className="text-emerald-400 animate-glow-text">
+              <span className="text-emerald-400">
                 Build Value Together.
               </span>
             </h1>
 
-            <p className="text-white/70 mt-6 max-w-xl animate-fade-in-up-delay-2">
+            {/* Description */}
+            <p className="text-base md:text-lg text-white/70 font-normal leading-relaxed mb-8 max-w-xl">
               Blingg is a SocialTech platform built to help people connect,
               communicate, grow, and move together in one trusted digital space.
               From secure messaging and community engagement to seamless
@@ -29,85 +74,29 @@ export default function HeroSection() {
               beyond.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-8 animate-fade-in-up-delay-3">
-              <button className="bg-white text-black px-6 py-3 rounded-full font-medium btn-smooth hover:shadow-lg">
-                Download App
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap gap-4 items-center">
+              <button className="px-7 py-3.5 rounded-full bg-emerald-400 hover:bg-emerald-500 text-black font-semibold text-sm md:text-base flex items-center gap-2 transition-all active:scale-95 shadow-lg shadow-emerald-400/20">
+                <span>Download App</span>
+                <ArrowDownIcon className="w-4 h-4" />
               </button>
-              <button className="border border-white/30 px-6 py-3 rounded-full btn-smooth hover:border-emerald-400 transition-all">
+              <button className="px-7 py-3.5 rounded-full border border-white/30 hover:border-emerald-400 text-white font-medium text-sm md:text-base transition-all hover:bg-white/5 active:scale-95">
                 How it Works
               </button>
             </div>
           </div>
 
-          {/* Phone Mockup */}
-          <div className="mt-12 hidden md:flex justify-center absolute  -bottom-3 right-1">
+          {/* Phone Preview */}
+          <div className="hidden md:flex absolute -bottom-6 right-8 lg:right-96 z-10 opacity-40 lg:opacity-80 pointer-events-none">
             <img
               src="/images/iPhone.png"
               alt="App preview"
-              className="max-w-xs md:max-w-sm drop-shadow-2xl w-[80px] sm:w-[130px] h-[80px] sm:h-[150px]"
+              className="w-[140px] lg:w-[180px] drop-shadow-2xl"
             />
           </div>
-        </div>
 
-        {/* Right Cards */}
-        <div className="grid grid-cols-1 gap-6 ">
-          {/* Global Reach */}
-          <div className="bg-white text-black rounded-3xl p-6 flex flex-col justify-between card-hover animate-fade-in-up-delay-1">
-            <div className="space-y-4">
-              <div className="text-emerald-600 font-medium flex items-center gap-2">
-                🌍 Global Reach
-              </div>
-              <h2 className="text-4xl font-bold mt-4">12+</h2>
-              <p className="text-black/60 mt-2">
-                Countries supported for instant transfers and payments.
-              </p>
-            </div>
-          </div>
-
-          {/* Crypto Ready */}
-          {/* <div className="bg-[#0f1b2d] rounded-3xl p-6 flex flex-col justify-between relative card-hover animate-fade-in-up-delay-2">
-            <img
-              src="/images/mainbit.png"
-              alt=""
-              className="absolute w-[130px] top-0 right-0"
-            />
-            <div>
-              <img
-                src="/images/graph.png"
-                alt=""
-                className="w-[40.77px]  mb-[17.5px]"
-              />
-              <div className="text-emerald-400 font-medium flex items-center gap-2">
-                Crypto Ready
-              </div>
-              <p className="text-white/70 mt-5 text-xs">
-                Receive, send and convert BTC instantly with zero hidden fees.
-              </p>
-            </div>
-            <button className="text-emerald-400 mt-6 flex items-center gap-4 text-xs hover-glow transition-all duration-300">
-              <p>View Rates </p>
-              <span>
-                <img src="/images/greenarrow.png" alt="" className="w-4" />
-              </span>
-            </button>
-          </div> */}
-
-          {/* Join Users */}
-          <div className="bg-slate-100 text-black rounded-3xl p-6 flex items-center justify-between py-18 card-hover animate-fade-in-up-delay-3">
-            <div className="flex flex-col gap-5">
-              <p className="text-black/60">
-                Send, Receive instantly with no hidden fee
-              </p>
-              <h3 className="text-emerald-600 font-semibold">
-                Join millions of active users
-              </h3>
-            </div>
-            <div>
-              <img src="/images/rightArror.png" alt="" className="w-12" />
-            </div>
-          </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -1,120 +1,113 @@
-import React from "react";
+import React from 'react'
+import { UserCheck, Vote, ShieldCheck, Users, Sparkles, CheckCircle2 } from 'lucide-react'
 
 export default function SaveTogether() {
   return (
-    <section className="w-full px-4 py-12 md:py-20 bg-white rounded-3xl animate-fade-in-up">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full px-4 py-16 bg-[#0b1220] text-white">
+      <div className="max-w-7xl mx-auto space-y-10">
+        
         {/* Header */}
-        <div className="mb-10 animate-fade-in-down">
-          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900">
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 bg-[#009875]/20 border border-[#009875]/30 px-3.5 py-1.5 rounded-full text-xs font-medium text-[#00D4AA]">
+            <Users className="w-3.5 h-3.5" />
+            <span>Structured Group Savings</span>
+          </div>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white">
             Two ways to save together
           </h2>
-          <p className="mt-2 text-gray-500 text-base md:text-lg">
-            Choose the structure that fits your group's needs.
+          <p className="text-white/60 text-base md:text-lg">
+            Choose the community structure that fits your group's financial needs.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 relative">
-          {/* Personal Groups */}
-          <div className="relative rounded-3xl bg-slate-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between text-sm md:text-lg card-hover animate-fade-in-left">
-            <div>
-              <span className="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-indigo-100 text-indigo-700">
-                Private Control
-              </span>
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          {/* 1. Personal Groups Card */}
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#131d2e] to-[#0f1726] border border-white/10 p-6 md:p-8 shadow-2xl flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  Private Control
+                </span>
+                <Users className="w-6 h-6 text-indigo-400 opacity-60" />
+              </div>
 
-              <h3 className="text-xl md:text-3xl font-semibold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Personal Groups
               </h3>
 
-              <p className="text-slate-300 mb-6 max-w-md">
-                Designed for life’s special moments. Personal Groups on Blingg
-                let friends and family save, contribute, and donate together
-                with ease. Create a shared wallet, contribute anytime, and
-                withdraw instantly — no approvals needed. <br />
-                Perfect for: Weddings • Birthdays • Naming ceremonies • Burial
-                support • Baby showers • Housewarming • Family & friends savings
-                Simple. Fast. Stress-free.
+              <p className="text-white/70 text-sm md:text-base leading-relaxed">
+                Designed for life's special moments. Personal Groups on Blingg let friends and family save, contribute, and donate together with ease. Create a shared wallet, contribute anytime, and withdraw instantly.
               </p>
-            </div>
 
-            <div className="flex items-center gap-3 text-slate-200">
-              <img src="/images/admincontrol.png" alt="" className="w-5 " />
-              <div>
-                <p className="font-medium">Admin Controlled</p>
-                <p className="text-sm text-slate-400">
-                  Admin manages all funds and members.
-                </p>
+              {/* Tag Badges */}
+              <div className="flex flex-wrap gap-2 pt-1">
+                {['Weddings', 'Birthdays', 'Baby Showers', 'Family Savings'].map((tag) => (
+                  <span key={tag} className="text-[11px] bg-white/5 border border-white/10 px-3 py-1 rounded-full text-white/80">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
 
-            <div className="absolute top-2 right-4 opacity-60">
-              <img
-                src="/images/group2.png"
-                alt=""
-                className="md:w-28 md:h-32 w-20 "
-              />
+            {/* Control Footer */}
+            <div className="pt-6 border-t border-white/10 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
+                <UserCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-white">Admin Controlled</p>
+                <p className="text-xs text-white/50">Admin manages all funds, payouts, and members directly.</p>
+              </div>
             </div>
-
-            {/* Icon */}
-            {/* <div className="absolute top-6 right-6 opacity-60">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="20" r="10" stroke="white" strokeWidth="2" />
-                <path d="M12 52c2-10 14-14 20-14s18 4 20 14" stroke="white" strokeWidth="2" />
-              </svg>
-            </div> */}
           </div>
 
-          {/* Public Groups */}
-          <div className="relative rounded-3xl bg-emerald-800 text-white p-6 md:p-8 shadow-lg flex flex-col justify-between card-hover animate-fade-in-right">
-            <div>
-              <span className="inline-block mb-6 px-4 py-1 text-sm rounded-full bg-emerald-200 text-emerald-900">
-                Community Trust
-              </span>
+          {/* 2. General / Community Groups Card */}
+          <div className="relative rounded-3xl bg-gradient-to-br from-[#0f2420] to-[#0b1a17] border border-[#009875]/30 p-6 md:p-8 shadow-2xl flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#009875]/20 text-[#00D4AA] border border-[#009875]/40">
+                  Community Trust
+                </span>
+                <ShieldCheck className="w-6 h-6 text-[#00D4AA] opacity-60" />
+              </div>
 
-              <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-white">
                 General Groups
               </h3>
 
-              <p className="text-emerald-100 mb-6 max-w-md">
-                Because group money deserves group control. General Groups are
-                designed for transparency and accountability. All contributions
-                go into a secure group wallet Withdrawal requests are visible to
-                members. <br/>Enhanced security 60% of members must approve before
-                funds are released No single person can misuse group funds Best
-                for: Churches • Cooperatives • Associations • Community projects
-                With Blingg, every contribution is protected by shared approval.
+              <p className="text-emerald-100/70 text-sm md:text-base leading-relaxed">
+                Group money deserves group control. General Groups provide maximum transparency and accountability. All contributions go into a secure wallet where no single person can misuse funds.
               </p>
+
+              <ul className="space-y-2 pt-1 text-xs md:text-sm text-emerald-200/90">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                  <span>Withdrawal requests visible to all members</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                  <span>Ideal for Churches, Cooperatives, and Associations</span>
+                </li>
+              </ul>
             </div>
 
-            <div className="flex items-center gap-2 text-emerald-100">
-              <img src="/images/multisig.png" alt="" className="w-5" />
+            {/* Multi-Sig Footer */}
+            <div className="pt-6 border-t border-[#009875]/30 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-[#009875]/30 border border-[#009875]/50 flex items-center justify-center text-[#00D4AA] shrink-0">
+                <Vote className="w-5 h-5" />
+              </div>
               <div>
-                <p className="font-medium">Multi‑Sig Approval</p>
-                <p className="text-sm text-emerald-200">
-                  Requires 60% of members approval to withdraw funds
-                </p>
+                <p className="text-sm font-semibold text-white">Multi-Sig Approval (60% Rule)</p>
+                <p className="text-xs text-emerald-200/60">Requires approval from at least 60% of members to release funds.</p>
               </div>
             </div>
-
-            <div className="absolute top-2 right-4 opacity-60">
-              <img
-                src="/images/group2.png"
-                alt=""
-                className="md:w-28 md:h-32 w-20 "
-              />
-            </div>
-
-            {/* Icon */}
-            {/* <div className="absolute top-6 right-6 opacity-60">
-              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="32" cy="20" r="10" stroke="white" strokeWidth="2" />
-                <path d="M12 52c2-10 14-14 20-14s18 4 20 14" stroke="white" strokeWidth="2" />
-              </svg>
-            </div> */}
           </div>
+
         </div>
+
       </div>
     </section>
-  );
+  )
 }

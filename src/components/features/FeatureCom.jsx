@@ -1,210 +1,221 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
+
+import secureMessagingImg from './features/secure-messaging.png'
+import groupCallsImg from './features/group-calls.png'
+import secureScanningImg from './features/Secure-scanning.png'
+import inChatPaymentImg from './features/In-chat-payment.png'
+import groupContributionImg from './features/Group-contribution.png'
+import instantPaymentImg from './features/instant-payment.png'
+import storiesImg from './features/Stories.png'
+
+
+const blinggFeatures = [
+  {
+    id: 'secure-messaging',
+    title: 'Secure Messaging',
+    description: 'End-to-end encrypted chat & instant voice messaging.',
+    image: secureMessagingImg
+  },
+  {
+    id: 'private-calls',
+    title: 'Private & Group Calls',
+    description: 'HD voice and video calling for teams and friends.',
+    image: groupCallsImg
+  },
+  {
+    id: 'secure-scanning',
+    title: 'Secure Scanning',
+    description: 'Real-time automatic scanning for links and files.',
+    image: secureScanningImg
+  },
+  {
+    id: 'in-chat-payment',
+    title: 'In-Chat Payment',
+    description: 'Send and request money directly inside any chat.',
+    image: inChatPaymentImg
+  },
+  {
+    id: 'group-contribution',
+    title: 'Group Contribution',
+    description: 'Personal & General savings pools with multi-sig approval.',
+    image: groupContributionImg
+  },
+  {
+    id: 'instant-bank-payout',
+    title: 'Instant Bank Payouts',
+    description: 'Transfer funds directly to any Nigerian bank account.',
+    image: instantPaymentImg
+  },
+  {
+    id: 'stories-status',
+    title: 'Stories & Status',
+    description: 'Share photos, updates, and moments with contacts.',
+    image: storiesImg
+  }
+]
+
 export default function FeaturesGrid() {
+  const [searchParams] = useSearchParams()
+  const selectedId = searchParams.get('selected') || 'secure-messaging'
+
+  const [activeFeature, setActiveFeature] = useState(
+    () => blinggFeatures.find((f) => f.id === selectedId) || blinggFeatures[0]
+  )
+
+  useEffect(() => {
+    const found = blinggFeatures.find((f) => f.id === selectedId)
+    if (found) {
+      setActiveFeature(found)
+    }
+  }, [selectedId])
+
   return (
-    <section className="w-full md:px-4 py-12 animate-fade-in-up">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="mb-12 animate-fade-in-down">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            Powerful Features
-          </h2>
-          <p className="text-white/60">
-            Everything you need to manage money and connect with others
+    <section className="w-full px-4 py-12 bg-[#0b1220] text-white font-sans min-h-[85vh]">
+      <div className="max-w-7xl mx-auto space-y-8">
+        
+        {/* Page Heading */}
+        <div className="space-y-2">
+          <div className="inline-flex items-center gap-2 bg-[#009875]/20 border border-[#009875]/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-[#00D4AA] uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>Explore Capabilities</span>
+          </div>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+            Blingg Features
+          </h1>
+          <p className="text-slate-400 text-sm md:text-base">
+            Select a feature to view full details and interactive capabilities.
           </p>
         </div>
-        <div className="flex flex-col md:grid md:grid-cols-3 gap-2 md:gap-6">
-          {/* Chat & Pay */}
-          <div
-            className="relative bg-white rounded-3xl p-6 md:p-8 shadow-lg overflow-hidden col-span-2 space-y-2 card-hover animate-fade-in-left"
-            style={{ animationDelay: '0.1s' }}
-          >
-            <img
-              src="/images/chat.png"
-              alt="Chat icon"
-              className="w-12"
-              loading="lazy"
-            />
 
-            <h3 className="text-xl md:text-2xl font-semibold text-slate-900 mb-3">
-              Chat & Pay
-            </h3>
-
-            <p className="text-slate-600 mb-6 text-sm md:text-lg">
-              Seamlessly blend conversations with transactions. Send money to
-              friends directly within your chat window without leaving the
-              conversation.
-            </p>
-
-            <ul className="space-y-3 text-slate-700 text-sm md:text-lg">
-              <li className="flex items-center gap-3">
-                <img
-                  src="/images/good.png"
-                  alt="check"
-                  className="w-5 h-5"
-                  loading="lazy"
-                />
-                End-to-end encryption
-              </li>
-              <li className="flex items-center gap-3">
-                <img
-                  src="/images/good.png"
-                  alt="check"
-                  className="w-5 h-5"
-                  loading="lazy"
-                />
-                Instant settlement
-              </li>
-              <li className="flex items-center gap-3">
-                <img
-                  src="/images/good.png"
-                  alt="check"
-                  className="w-5 h-5"
-                  loading="lazy"
-                />
-                Media sharing
-              </li>
-            </ul>
-
-            <img
-              src="/images/chatpay.png"
-              alt="Chat payment preview"
-              className="absolute bottom-0 right-0 w-[130px] md:w-[270px]"
-              loading="lazy"
-            />
-          </div>
-
-          {/* Smart Protection */}
-          <div
-            className="bg-indigo-50 rounded-3xl p-6 md:p-8 shadow-lg flex flex-col justify-between text-sm md:text-lg card-hover animate-fade-in-up-delay-1"
-            style={{ animationDelay: '0.2s' }}
-          >
+        {/* Feature Layout Container */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 bg-[#0f1b2d] border border-white/10 rounded-3xl p-4 md:p-6 shadow-2xl items-stretch">
+          
+          {/* Left Sidebar List */}
+          <div className="lg:col-span-5 space-y-2.5 flex flex-col justify-between">
             <div>
-              <img
-                src="/images/smart.png"
-                alt="Security icon"
-                className="w-12"
-                loading="lazy"
-              />
-
-              <h3 className="mt-2 text-xl md:text-2xl font-semibold text-slate-900 mb-3">
-                Smart File & Link Protection
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-2">
+                Select Feature
               </h3>
 
-              <p className="text-slate-600 mb-2">
-                Share with confidence on Blingg.
-              </p>
+              <div className="space-y-2">
+                {blinggFeatures.map((item) => {
+                  const isSelected = activeFeature.id === item.id
+                  return (
+                    <div
+                      key={item.id}
+                      onClick={() => setActiveFeature(item)}
+                      className={`flex items-center justify-between p-3.5 rounded-2xl cursor-pointer transition-all duration-200 ${
+                        isSelected
+                          ? 'bg-[#009875] text-white shadow-lg'
+                          : 'bg-white/5 hover:bg-white/10 text-slate-300'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="w-12 h-12 rounded-xl object-cover object-top shrink-0 border border-white/20 bg-slate-900"
+                        />
+                        <div>
+                          <h4 className="text-sm font-bold leading-snug">
+                            {item.title}
+                          </h4>
+                          <p
+                            className={`text-xs line-clamp-1 ${
+                              isSelected ? 'text-emerald-100' : 'text-slate-400'
+                            }`}
+                          >
+                            {item.description}
+                          </p>
+                        </div>
+                      </div>
+                      <ArrowRight
+                        className={`w-4 h-4 shrink-0 ${
+                          isSelected ? 'text-white' : 'text-slate-500'
+                        }`}
+                      />
+                    </div>
+                  )
+                })}
+              </div>
             </div>
-
-            <p>
-              Every file and link is checked for scams, phishing, and malware
-              before you open it, keeping conversations safe and secure.
-            </p>
           </div>
 
-          {/* Group Power */}
+          {/* Right Detailed Display Panel */}
+          <div className="lg:col-span-7 bg-[#0b1220] border border-white/10 rounded-2xl p-6 md:p-8 flex flex-col justify-between space-y-6">
+            
+            <div className="space-y-6">
+              
+              {/* Image Preview Window */}
+              <div className="relative w-full h-[420px] md:h-[520px] rounded-2xl overflow-hidden bg-[#070d18] border border-white/10 shadow-2xl p-4 md:p-6 flex items-center justify-center">
+                
+                {/* Feature Image */}
+                <img
+                  src={activeFeature.image}
+                  alt={activeFeature.title}
+                  className="h-full w-auto max-w-full object-contain rounded-xl shadow-2xl transition-transform duration-300 hover:scale-102"
+                />
 
-          {/* Crypto to Cash */}
-          {/* <div
-            className="bg-white rounded-3xl p-6 md:p-8 shadow-lg flex flex-col md:flex-row gap-6 items-start md:items-center col-span-2 md:text-lg card-hover animate-fade-in-up-delay-2"
-            style={{ animationDelay: "0.4s" }}
-          >
-            <div className="flex-1">
-              <img src="/images/crypto.png" alt="Crypto icon" className="w-14" loading="lazy" />
-
-              <h3 className="text-xl mt-2 md:text-2xl font-semibold text-slate-900 mb-3">
-                Crypto to Cash
-              </h3>
-
-              <p className="text-slate-600 mb-6 max-w-md text-sm md:text-lg">
-                Convert Bitcoin to Naira instantly with competitive rates and
-                zero hidden fees.
-              </p>
-
-              <div className="flex gap-4">
-                <div className="bg-slate-50 rounded-xl px-4 py-2 text-sm">
-                  <p className="text-slate-500">Fee</p>
-                  <p className="font-medium">0%</p>
+                <div className="absolute top-4 left-4 z-10">
+                  <span className="px-3.5 py-1 rounded-full text-xs font-semibold bg-[#0b1220]/80 backdrop-blur-md text-[#00D4AA] border border-[#009875]/40 shadow-sm">
+                    Blingg Core Feature
+                  </span>
                 </div>
+              </div>
 
-                <div className="bg-slate-50 rounded-xl px-4 py-2 text-sm">
-                  <p className="text-slate-500">Speed</p>
-                  <p className="font-medium">Instant</p>
+              {/* Title & Description */}
+              <div className="space-y-2">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-white">
+                  {activeFeature.title}
+                </h2>
+                <p className="text-slate-300 text-sm md:text-base leading-relaxed">
+                  {activeFeature.description}
+                </p>
+              </div>
+
+              {/* Highlights */}
+              <div className="space-y-2 pt-2 border-t border-white/10">
+                <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                  Key Highlights
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs md:text-sm text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                    <span>Bank-grade security</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                    <span>Real-time instant processing</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                    <span>Zero hidden fees</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-[#00D4AA]" />
+                    <span>Available on iOS & Android</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-full md:w-80 bg-slate-900 text-white rounded-2xl p-5 hover:shadow-2xl transition-all duration-500">
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex items-center gap-1">
-                  <img src="/images/crypto2.png" alt="Bitcoin icon" className="w-12" loading="lazy" />
-                  <span className="font-medium">Bitcoin</span>
-                </div>
-
-                <img src="/images/graph.png" alt="Price graph" className="w-14" loading="lazy" />
+            {/* Bottom Bar */}
+            <div className="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div className="flex items-center gap-2 text-xs text-slate-400">
+                <ShieldCheck className="w-4 h-4 text-[#00D4AA]" />
+                <span>Protected by Blingg Shield</span>
               </div>
-
-              <p className="text-sm text-slate-400 mb-1">Current Rate</p>
-              <p className="text-2xl font-semibold mb-4">₦110,450,230</p>
-
-              <div className="flex gap-3">
-                <button className="flex-1 bg-indigo-600 rounded-xl py-2">
-                  Send
-                </button>
-                <button className="flex-1 bg-slate-700 rounded-xl py-2">
-                  Receive
-                </button>
-                <button className="flex-1 bg-[#009875] rounded-xl py-2">
-                  Convert
-                </button>
-              </div>
-            </div>
-          </div> */}
-        </div>
-        <div
-          className="bg-slate-900 flex justify-between items-center w-full mt-8 rounded-3xl p-6 md:p-8 text-white shadow-lg relative text-sm md:text-lg card-hover animate-fade-in-right"
-          style={{ animationDelay: '0.3s' }}
-        >
-          <div>
-            <div className="flex justify-between items-center">
-              <div className="flex flex-col gap-3 mb-6">
-                <div className="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center">
-                  <img
-                    src="/images/group1.png"
-                    alt="Group icon"
-                    className="w-12"
-                    loading="lazy"
-                  />
-                </div>
-
-                <h3 className="text-xl md:text-2xl font-semibold">
-                  Group Power
-                </h3>
-              </div>
-              {/* <img
-              src="/images/group2.png"
-              alt="Group preview"
-              className="w-28 h-32 absolute top-2 right-2"
-              loading="lazy"
-            /> */}
+              <button className="px-6 py-2.5 bg-[#009875] hover:bg-emerald-600 text-white rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-md">
+                Try {activeFeature.title}
+              </button>
             </div>
 
-            <p className="text-slate-300 max-w-md">
-              Pool funds with friends or communities in a transparent and secure
-              way.
-            </p>
-
-            <img
-              src="/images/fiveimages.png"
-              alt="Group members"
-              className=" md:w-36 mt-20"
-              loading="lazy"
-            />
           </div>
-          <img
-            src="/images/gpower.png"
-            className="w-[122px] h-[122px] sm:w-[272px] sm:h-[272px]"
-          />
+
         </div>
+
       </div>
     </section>
   )
