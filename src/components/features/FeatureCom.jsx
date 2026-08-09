@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
 
-import secureMessagingImg from './features/secure-messaging.png'
-import groupCallsImg from './features/group-calls.png'
-import secureScanningImg from './features/Secure-scanning.png'
-import inChatPaymentImg from './features/In-chat-payment.png'
-import groupContributionImg from './features/Group-contribution.png'
-import instantPaymentImg from './features/instant-payment.png'
-import storiesImg from './features/Stories.png'
+
 
 
 const blinggFeatures = [
@@ -16,43 +10,42 @@ const blinggFeatures = [
     id: 'secure-messaging',
     title: 'Secure Messaging',
     description: 'End-to-end encrypted chat & instant voice messaging.',
-    image: secureMessagingImg
+    image: "/features/secure-messaging.png",
   },
   {
     id: 'private-calls',
     title: 'Private & Group Calls',
     description: 'HD voice and video calling for teams and friends.',
-    image: groupCallsImg
-  },
+    image: "/features/group-calls.png",},
   {
     id: 'secure-scanning',
     title: 'Secure Scanning',
     description: 'Real-time automatic scanning for links and files.',
-    image: secureScanningImg
+    image: "/features/Secure-scanning.png"
   },
   {
     id: 'in-chat-payment',
     title: 'In-Chat Payment',
     description: 'Send and request money directly inside any chat.',
-    image: inChatPaymentImg
+    image: "/features/in-chat-payment.png"
   },
   {
     id: 'group-contribution',
     title: 'Group Contribution',
     description: 'Personal & General savings pools with multi-sig approval.',
-    image: groupContributionImg
+    image: "/features/Group-contribution.png"
   },
   {
     id: 'instant-bank-payout',
     title: 'Instant Bank Payouts',
     description: 'Transfer funds directly to any Nigerian bank account.',
-    image: instantPaymentImg
+    image: "/features/instant-payment.png"
   },
   {
     id: 'stories-status',
     title: 'Stories & Status',
     description: 'Share photos, updates, and moments with contacts.',
-    image: storiesImg
+    image: "/features/Stories.png"
   }
 ]
 
