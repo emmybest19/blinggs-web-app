@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
 
-import secureMessagingImg from '/features/secure-messaging.png'
-import groupCallsImg from '/features/group-calls.png'
-import secureScanningImg from '/features/Secure-scanning.png'
-import inChatPaymentImg from '/features/In-chat-payment.png'
-import groupContributionImg from '/features/Group-contribution.png'
-import instantPaymentImg from '/features/instant-payment.png'
-import storiesImg from '/features/Stories.png'
+import secureMessagingImg from './features/secure-messaging.png'
+import groupCallsImg from './features/group-calls.png'
+import secureScanningImg from './features/Secure-scanning.png'
+import inChatPaymentImg from './features/In-chat-payment.png'
+import groupContributionImg from './features/Group-contribution.png'
+import instantPaymentImg from './features/instant-payment.png'
+import storiesImg from './features/Stories.png'
+
 
 const blinggFeatures = [
   {
