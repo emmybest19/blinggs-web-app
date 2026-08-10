@@ -3,7 +3,17 @@ import { useSearchParams } from 'react-router-dom'
 import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+import secureMessagingImg from '/features/secure-messaging.png'
+import groupCallsImg from '/features/group-calls.png'
+import secureScanningImg from '/features/Secure-scanning.png'
+import inChatPaymentImg from '/features/In-chat-payment.png'
+import groupContributionImg from '/features/Group-contribution.png'
+import instantPaymentImg from '/features/instant-payment.png'
+import storiesImg from '/features/Stories.png'
+>>>>>>> parent of 6ec8949 (Merge pull request #1 from emmybest19/dammiee)
 
 =======
 import secureMessagingImg from '/features/secure-messaging.png'
