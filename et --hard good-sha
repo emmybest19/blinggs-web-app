@@ -1,0 +1,20 @@
+[33mdda9f72[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m fix: reverting the main branch
+[33m18d74d5[m fix: reverting the main branch
+[33m24ea117[m[33m ([m[1;32mbackup-before-revert[m[33m)[m fix: corrected the image references on the blinggsFeature array inside the Feature component
+[33m24710e3[m fix: added images to the feature page
+[33m846cf06[m fix: added images to the feature page
+[33m6ec8949[m Merge pull request #1 from emmybest19/dammiee
+[33m486a312[m[33m ([m[1;31morigin/dammiee[m[33m)[m Add new feature
+[33m4f0323e[m changed the path for img
+[33m0105622[m Changes to the features page
+[33m8a515e0[m[33m ([m[1;32mtest[m[33m)[m Fixed the app scrolling app behaviour
+[33mb694191[m edited the title of the app
+[33m428f04b[m fixed the error on page reload
+[33m59aa69c[m effected holistic corrections on the entire app
+[33m6a72b6e[m updated feature page
+[33m7b700bc[m Revamped most of the components to add animations
+[33me1582d2[m Final update was carried out on the UI
+[33m7da1040[m Final update was carried out on the UI
+[33mc4b6684[m Added the main Icon to the app
+[33mb56479f[m Added the main Icon to the app
+[33m7a3bd6f[m Effected all clients changes

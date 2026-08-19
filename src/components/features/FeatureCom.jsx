@@ -4,6 +4,16 @@ import { ShieldCheck, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react'
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import secureMessagingImg from '/features/secure-messaging.png'
+import groupCallsImg from '/features/group-calls.png'
+import secureScanningImg from '/features/Secure-scanning.png'
+import inChatPaymentImg from '/features/In-chat-payment.png'
+import groupContributionImg from '/features/Group-contribution.png'
+import instantPaymentImg from '/features/instant-payment.png'
+import storiesImg from '/features/Stories.png'
+>>>>>>> e99e77824c8fd32b185686f846a0b6d340db8f24
 
 =======
 import secureMessagingImg from '/features/secure-messaging.png'
