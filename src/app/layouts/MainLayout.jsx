@@ -1,14 +1,18 @@
 import { Outlet } from 'react-router-dom'
 
-import SiteFooter from '../components/SiteFooter'
-import SiteHeader from '../components/SiteHeader'
+import Navbar from '../components/Navbar/Navbar'
+import Footer from '../components/Footer/Footer'
 
 export default function MainLayout() {
-  return (
-    <div>
-      <SiteHeader />
-      <Outlet />
-      <SiteFooter />
-    </div>
-  )
+    return (
+        <div className="app-layout">
+
+            <Navbar />
+
+            <Outlet />
+
+            <Footer />
+
+        </div>
+    )
 }

@@ -1,0 +1,103 @@
+.coming-cont {
+    position: relative;
+    width: 100%;
+    min-height: 270px;
+    background-color: #1a1a1a;
+    padding: 74px 20px 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.coming-cont::before {
+    content: "";
+    position: absolute;
+    width: 720px;
+    height: 420px;
+    left: -280px;
+    top: 60%;
+    transform: translateY(-50%);
+    background: radial-gradient(
+        circle,
+        rgba(20, 180, 160, 0.22) 0%,
+        rgba(20, 180, 160, 0.1) 35%,
+        transparent 70%
+    );
+   pointer-events: none;
+    filter: blur(35px);
+}
+.coming-cont::after {
+    content: "";
+    position: absolute;
+    width: 720px;
+    height: 420px;
+    right: -280px;
+    top: 60%;
+    transform: translateY(-50%);
+    background: radial-gradient(
+        circle,
+        rgba(20, 180, 160, 0.22) 0%,
+        rgba(20, 180, 160, 0.1) 35%,
+        transparent 70%
+    );
+    pointer-events: none;
+    filter: blur(35px);
+}
+.coming-main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.coming-main h1 {
+    margin: 0 0 14px;
+    color: #e6e6e6;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+}
+.coming-main > p {
+    margin: 0 0 28px;
+    max-width: 620px;
+    color: #8f8f8f;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.main-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.main-btn a {
+    height: 36px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: #0a0a0a;
+    border: 1px solid #292929;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+.main-btn img {
+    width: 13px;
+    height: 13px;
+    object-fit: contain;
+}
+.main-btn h3 {
+    margin: 0;
+    color: #d7d7d7;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+}

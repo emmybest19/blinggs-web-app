@@ -1,0 +1,126 @@
+.how-hero {
+    position: relative;
+    width: 96.5%;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 20px;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+.how-hero-glow {
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(
+        ellipse,
+        rgba(0, 180, 160, 0.12) 0%,
+        rgba(0, 180, 160, 0.05) 35%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+.how-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.how-hero-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    margin-bottom: 18px;
+    border-radius: 20px;
+    background: rgba(16, 190, 165, 0.07);
+    border: 1px solid rgba(16, 190, 165, 0.12);
+    color: #21c7b0;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+.how-hero-title {
+    max-width: 600px;
+    margin: 0 0 18px;
+    color: #e8e8e8;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+.how-hero-title span:first-child {
+    display: inline;
+}
+.how-highlight {
+    color: #1fc7b0;
+    margin-left: 8px;
+}
+.how-hero-subtitle {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 0 24px;
+    color: #888d91;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+.how-hero-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 15px;
+}
+.how-input {
+    width: 320px;
+    height: 42px;
+    padding: 0 14px;
+    box-sizing: border-box;
+    border: 1px solid #292b2c;
+    border-radius: 7px;
+    outline: none;
+    background-color: #1a1b1c;
+    color: #e6e6e6;
+    font-size: 10px;
+}
+.how-input::placeholder {
+    color: #666b6d;
+}
+.how-input:focus {
+    border-color: rgba(30, 195, 170, 0.6);
+}
+.How-waitlist {
+    height: 42px;
+    padding: 0 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    background-color: #1bbca9;
+    color: #071312;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+.How-waitlist:hover {
+    background-color: #25d1bb;
+    transform: translateY(-1px);
+}
+.how-hero-content > p:last-child {
+    margin: 18px 0 0;
+    color: #555b5e;
+    font-size: 13px;
+    line-height: 1.4;
+}

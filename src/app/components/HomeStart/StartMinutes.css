@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+.start-contain {
+    width: 100%;
+    background-color: #0a0a0a;
+    padding: 100px 0 90px;
+    box-sizing: border-box;
+}
+.start-contain h1 {
+    margin: 0 0 55px;
+    text-align: center;
+    color: #e8e8e8;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.start-main {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.number-track {
+    position: relative;
+    z-index: 2;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    left: 130px;
+}
+.track-No {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #1a1c1d;
+    border: 1px solid #282b2d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.track-No p {
+    margin: 0;
+    color: #8b8e91;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+}
+.track-No:first-child {
+    background-color: rgba(20, 180, 160, 0.08);
+    border-color: #19a995;
+}
+.track-No .activeNo {
+    color: #21c7b0;
+}
+.start-main hr {
+    /* position: absolute; */
+    top: 24px;
+    left: 14px;
+    width: calc(100% - 28px);
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #242627;
+    z-index: 1;
+}
+.main-contents {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 35px;
+}
+.con-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.con-div img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+.con-div .exceptThisImg {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+.con-div label {
+    display: block;
+    margin-bottom: 10px;
+    color: #d9d9d9;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+.con-div p {
+    width: 100%;
+    max-width: 270px;
+    margin: 0;
+    color: #777b80;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.6;
+}
