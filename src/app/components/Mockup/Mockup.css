@@ -1,0 +1,48 @@
+.mockup-container {
+    position: relative;
+    width: 100%;
+    height: 630px;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+}
+.img-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.img-itself {
+    width: 1500px;
+    max-width: none;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-top: 0;
+}
+.hero-txt{
+    width: max-content;
+    height: 330px;
+    background-color: #0a0a0a;
+    color: aliceblue;
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+.hero-txt .txt-div{
+    display: flex;
+    gap: 5px;
+}
+.txt-div .div-img{
+    width: 12px;
+    height: 12px;
+}
+.txt-div p{
+    font-size: 10px;
+    color: rgb(136, 141, 146);
+}

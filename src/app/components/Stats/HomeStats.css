@@ -1,0 +1,29 @@
+.stats{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    width: 100%;
+    height: 150px;
+}
+.stats-box{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.stats-box label{
+    font-size: 45px;
+    color: #ffff;
+    font-weight: bold;
+}
+.stats-box p{
+    font-size: 10px;
+    color: #636262;
+}
+.stats-box .hr{
+    width: 25px;
+    height: 2px;
+    background-color: #1cae9d;
+}

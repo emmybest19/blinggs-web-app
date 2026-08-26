@@ -1,0 +1,35 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.btn-waitlist {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    transition: all 0.25s ease;
+}
+.btn-waitlist:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+}
+.btn-affiliate {
+    text-decoration: none;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    background: #00D4AB;
+    border: none;
+    transition: all 0.25s ease;
+}
+.btn-affiliate:hover {
+    background: #00b894;
+    transform: translateY(-1px);
+}

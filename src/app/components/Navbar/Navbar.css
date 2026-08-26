@@ -1,0 +1,150 @@
+/* .navbar {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    background: #0a0a0a;
+    border-bottom: 1px solid #1a1a1a;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.nav-left .brand{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+.nav-logo {
+    width: 45px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+}
+.nav-left .brand span {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.2px;
+}
+.nav-main {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.nav-main ul {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.nav-main li {
+    color: #8f8f8f;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease,opacity 0.2s ease;
+}
+.nav-main li:hover {
+    color: #ffffff;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.nav-right button {
+    height: 36px;
+    padding: 0 13px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.waitlist {
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid #242424;
+}
+.waitlist:hover {
+    background: #151515;
+    border-color: #333333;
+}
+.affiliiate {
+    color: #061c18;
+    background: #0fb692;
+    border: 1px solid #0fb692;
+}
+.affiliiate:hover {
+    background: #10c7a0;
+    border-color: #10c7a0;
+}
+.nav-right button:active {
+    transform: scale(0.97);
+} */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: #0a0a0a;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.nav-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+.nav-main{
+    margin-left: 60px;
+}
+.nav-main ul {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-main a {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+.nav-main a:hover {
+    color: #ffffff;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: -20px;
+}
