@@ -124,3 +124,58 @@
     font-size: 13px;
     line-height: 1.4;
 }
+@media screen and (max-width: 1024px) {
+    .how-hero-title {
+        font-size: 56px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .how-hero {
+        width: 100%;
+        padding: 60px 24px;
+    }
+    .how-hero-title {
+        font-size: 46px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .how-hero {
+        padding: 50px 18px;
+    }
+    .how-hero-title {
+        font-size: 36px;
+        max-width: 100%;
+    }
+    .how-hero-subtitle {
+        font-size: 13px;
+    }
+    .how-hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    .how-input {
+        width: 100%;
+        max-width: 320px;
+    }
+    .How-waitlist {
+        width: 100%;
+        max-width: 224px;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 374px) {
+    .how-hero-title {
+        font-size: 30px;
+    }
+    .how-hero-subtitle {
+        font-size: 12px;
+    }
+    .how-input {
+        height: 40px;
+    }
+    .How-waitlist {
+        height: 40px;
+        padding: 0 14px;
+    }
+}

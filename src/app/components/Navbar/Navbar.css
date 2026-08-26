@@ -92,7 +92,7 @@
     transform: scale(0.97);
 } */
 
-.navbar {
+/* .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,4 +147,488 @@
     align-items: center;
     gap: 14px;
     margin-left: -20px;
+} */
+
+
+
+
+
+
+
+
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 60px;
+    background: #0a0a0a;
+   position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.nav-logo {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+.nav-main {
+    margin-left: 60px;
+}
+.nav-main ul {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+   list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-main a {
+    text-decoration: none;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+.nav-main a:hover {
+    color: #ffffff;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-left: -20px;
+    flex-shrink: 0;
+}
+.hamburger {
+    display: none;
+    width: 32px;
+    height: 28px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   gap: 6px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1200;
+    flex-shrink: 0;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 20px;
+    transition:
+        transform 0.3s ease,
+        opacity 0.25s ease,
+        width 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.mobile-menu-brand {
+    display: none;
+}
+@media screen and (max-width: 1023px) {
+    .nav-main {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+    .mobile-menu-brand {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        padding: 10px;
+        margin-bottom: 18px;
+        box-sizing: border-box;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .mobile-brand {
+        /* display: flex; */
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-top: -40px;
+        justify-self: center;
+    }
+    .mobile-nav-logo {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        display: block;
+    }
+    .nav-main ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 6px;
+        margin: 0;
+        padding: 8px 22px 30px;
+        list-style: none;
+        box-sizing: border-box;
+    }
+    .nav-main li {
+        width: 100%;
+        display: block;
+    }
+    .nav-main a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 15px 16px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        text-decoration: none;
+        color: #a0a0a0;
+        font-size: 1rem;
+        font-weight: 500;
+        transition:
+            color 0.25s ease,
+            background 0.25s ease;
+    }
+    .nav-main a:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1439px) {
+    .navbar {
+        padding: 18px 60px;
+    }
+    .nav-main {
+        margin-left: 55px;
+    }
+    .nav-main ul {
+        gap: 32px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .navbar {
+        padding: 17px 45px;
+    }
+    .nav-main {
+        margin-left: 40px;
+    }
+    .nav-main ul {
+        gap: 26px;
+    }
+    .nav-main a {
+        font-size: 0.9rem;
+    }
+    .brand {
+        font-size: 1.15rem;
+    }
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+    }
+}
+@media screen and (max-width: 1023px) {
+    .navbar {
+        position: sticky;
+  }
+    .nav-main {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: auto;
+        width: min(320px, 85vw);
+        height: 100vh;
+        margin-left: 0;
+        display: flex;
+        align-items: flex-start;
+        padding-top: 90px;
+        background: #0a0a0a;
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow:
+            -12px 0 40px rgba(0, 0, 0, 0.45);
+
+        box-sizing: border-box;
+        overflow-y: auto;
+        transform: translateX(105%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition:
+            transform 0.4s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 1100;
+    }
+    .nav-main.nav-open {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .nav-main ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        margin: 0;
+        padding: 15px 22px 30px;
+        box-sizing: border-box;
+    }
+    .nav-main li {
+        width: 100%;
+    }
+    .nav-main a {
+        width: 100%;
+        display: block;
+        padding: 15px 16px;
+        box-sizing: border-box;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #a0a0a0;
+    }
+    .nav-main a:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .nav-right {
+        margin-left: auto;
+        margin-right: 22px;
+    }
+    .hamburger {
+        display: flex;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .navbar {
+        padding: 16px 40px;
+    }
+    .brand {
+        font-size: 1.15rem;
+    }
+    .nav-logo {
+        width: 30px;
+        height: 30px;
+    }
+    .nav-main {
+        width: 330px;
+        padding-top: 90px;
+    }
+    .nav-main ul {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .nav-main a {
+        padding: 16px;
+        font-size: 1rem;
+    }
+    .nav-right {
+        margin-right: 22px;
+    }
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+    .navbar {
+        padding: 15px 30px;
+    }
+    .brand {
+        font-size: 1.1rem;
+    }
+    .nav-logo {
+        width: 29px;
+        height: 29px;
+    }
+    .nav-main {
+        width: 300px;
+        padding-top: 82px;
+    }
+    .nav-main ul {
+        padding: 15px 25px 25px;
+    }
+    .nav-main a {
+        padding: 14px 15px;
+        font-size: 0.95rem;
+    }
+    .nav-right {
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 599px) {
+    .navbar {
+        padding: 14px 22px;
+    }
+    .brand {
+        gap: 8px;
+        font-size: 1.05rem;
+    }
+    .nav-logo {
+        width: 28px;
+        height: 28px;
+    }
+    .nav-main {
+        width: 280px;
+        padding-top: 78px;
+    }
+    .nav-main ul {
+        padding: 12px 20px 25px;
+    }
+    .nav-main a {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+    .nav-right {
+        margin-right: 18px;
+    }
+    .hamburger {
+        width: 30px;
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 479px) {
+    .navbar {
+       padding: 13px 16px;
+    }
+    .brand {
+        gap: 7px;
+        font-size: 1rem;
+    }
+    .nav-logo {
+        width: 27px;
+        height: 27px;
+    }
+    .nav-main {
+        width: min(280px, 84vw);
+        padding-top: 72px;
+    }
+    .nav-main ul {
+        padding: 12px 15px 25px;
+    }
+    .nav-main a {
+        padding: 13px 14px;
+        font-size: 0.9rem;
+    }
+    .nav-right {
+        margin-right: 15px;
+    }
+    .hamburger {
+        width: 28px;
+    }
+    .hamburger span {
+        width: 23px;
+    }
+}
+@media screen and (min-width: 320px) and (max-width: 374px) {
+    .navbar {
+        padding: 11px 10px;
+    }
+    .brand {
+        gap: 5px;
+        font-size: 0.85rem;
+    }
+    .nav-logo {
+        width: 24px;
+        height: 24px;
+    }
+    .nav-main {
+        width: min(270px, 88vw);
+        padding-top: 68px;
+    }
+    .nav-main ul {
+        padding: 10px 10px 20px;
+    }
+    .nav-main a {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    .nav-right {
+        margin-right: 8px;
+    }
+    .hamburger {
+        width: 25px;
+        height: 25px;
+        gap: 5px;
+    }
+    .hamburger span {
+        width: 20px;
+    }
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+@media screen and (max-width: 319px) {
+   .navbar {
+        padding: 10px 8px;
+    }
+    .brand {
+        gap: 4px;
+        font-size: 0.78rem;
+    }
+   .nav-logo {
+        width: 22px;
+        height: 22px;
+    }
+    .nav-main {
+        width: 88vw;
+        padding-top: 60px;
+    }
+    .nav-main ul {
+        padding: 8px;
+    }
+    .nav-main a {
+        padding: 11px;
+        font-size: 0.8rem;
+    }
+    .nav-right {
+        margin-right: 6px;
+    }
+    .hamburger {
+        width: 24px;
+        height: 24px;
+        gap: 5px;
+    }
+    .hamburger span {
+        width: 19px;
+    }
+   .hamburger.active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 }
