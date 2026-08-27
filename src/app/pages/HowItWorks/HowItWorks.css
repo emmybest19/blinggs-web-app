@@ -1,0 +1,4 @@
+main,section {
+    max-width: 100%;
+    overflow-x: clip;
+}

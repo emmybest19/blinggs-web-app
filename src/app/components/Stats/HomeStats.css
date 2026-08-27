@@ -27,3 +27,41 @@
     height: 2px;
     background-color: #1cae9d;
 }
+@media screen and (max-width: 1024px) {
+    .stats {
+        gap: 80px;
+    }
+    .stats-box label {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .stats {
+        gap: 48px;
+    }
+    .stats-box label {
+        font-size: 34px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .stats {
+        gap: 28px;
+        height: auto;
+        padding: 30px 0;
+        flex-wrap: wrap;
+    }
+    .stats-box label {
+        font-size: 28px;
+    }
+    .stats-box p {
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 374px) {
+    .stats {
+        gap: 18px;
+    }
+    .stats-box label {
+        font-size: 24px;
+    }
+}

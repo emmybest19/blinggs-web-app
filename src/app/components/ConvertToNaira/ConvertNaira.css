@@ -100,6 +100,69 @@
     transition: 0.25s ease;
 }
 .naira-main a:hover {
-   background: #2bd1bb;
+    background: #2bd1bb;
     transform: translateY(-2px);
+}
+@media screen and (max-width: 1024px) {
+    .naira-container {
+        padding: 70px 48px 64px;
+    }
+    .naira-container > h2 {
+        font-size: 27px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .naira-container {
+        padding: 60px 28px 56px;
+    }
+    .naira-main {
+        grid-template-columns: 1fr;
+        max-width: 460px;
+    }
+    .main-txt {
+        padding: 24px 0;
+        min-height: 0;
+    }
+    .main-txt:not(:first-child)::before {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 48px;
+        height: 1px;
+    }
+    .naira-container > h2 {
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .naira-container {
+        padding: 50px 18px 48px;
+    }
+    .naira-container > h2 {
+        font-size: 22px;
+    }
+    .naira-container > p {
+        font-size: 11px;
+    }
+    .main-txt label {
+        font-size: 24px;
+    }
+    .main-txt p {
+        font-size: 10px;
+    }
+    .naira-main a {
+        padding: 12px 24px;
+        font-size: 9px;
+    }
+}
+@media screen and (max-width: 374px) {
+    .naira-container {
+        padding: 44px 14px 42px;
+    }
+    .naira-container > h2 {
+        font-size: 20px;
+    }
+    .main-txt label {
+        font-size: 21px;
+    }
 }
