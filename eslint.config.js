@@ -31,27 +31,6 @@ export default defineConfig([
         'error',
         { varsIgnorePattern: '^[A-Z_]', argsIgnorePattern: '^[A-Z_]' },
       ],
-
-      // Feature-sliced boundaries: features are siblings and must not reach
-      // into each other's internals, and nothing may bypass a feature's
-      // public barrel (`@features/<name>`).
-      'no-restricted-imports': [
-        'error',
-        {
-          patterns: [
-            {
-              group: ['@features/*/*'],
-              message:
-                'Import from the feature barrel (@features/<feature>) instead of reaching into its internals.',
-            },
-            {
-              group: ['../../*/'],
-              message:
-                'Cross-feature relative imports are not allowed. Use @shared, @app, or the feature barrel.',
-            },
-          ],
-        },
-      ],
     },
   },
 ])

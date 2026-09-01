@@ -1,34 +1,20 @@
-import "./FeatureChat.css"
-import chatFeatureImg from "../../assets/chat-conversation.png"
+import chatFeatureImg from '../../assets/chat-conversation.png'
+import FeatureSplit from '../FeatureSplit/FeatureSplit'
 
-
-export default function FeatureChat(){
-    return(
-        <div className="chat-cont">
-            <div className="chat-lft">
-                <img src={chatFeatureImg} alt="chat_and_pay" />
-            </div>
-            <div className="chat-rgt">
-                <div className="rght-m-label">
-                    <span>MESSAGING</span>
-                </div>
-                <h2>Chat & Pay</h2>
-                <p>Messaging and commerce blended into one smooth flow. Request money and send receipts natively within the conversation.</p>
-                <div className="p-div">
-                    <div className="p_txt">
-                        <div className="tick">✓</div>
-                        <p>End-to-end encrypted messages</p>
-                    </div>
-                    <div className="p_txt">
-                        <div className="tick">✓</div>
-                        <p>Send money mid-conversation</p>
-                    </div>
-                    <div className="p_txt">
-                        <div className="tick">✓</div>
-                        <p>Voice notes, images &amp; payments in one thread</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
+export default function FeatureChat() {
+  return (
+    <FeatureSplit
+      badge="MESSAGING"
+      title="Chat & Pay"
+      body="Messaging and commerce blended into one smooth flow. Request money and send receipts natively within the conversation."
+      bullets={[
+        'End-to-end encrypted messages',
+        'Send money mid-conversation',
+        'Voice notes, images & payments in one thread',
+      ]}
+      image={chatFeatureImg}
+      imageAlt="chat_and_pay"
+      imageSide="left"
+    />
+  )
 }

@@ -1,27 +1,16 @@
-import "./featureHero.css"
-import {Link } from "react-router-dom"
-
+import Hero from '../Hero/Hero'
 
 export default function FeatureHero() {
-    return (
-       <>
-        <section className="home-hero">
-            <div className="hero-glow"></div>
-            <div className="hero-content">
-                <div className="hero-badge">FEATURES</div>
-                <h1 className="hero-title">
-                    <span>Everything you need.</span>
-                    <span className="highlight">Nothing you don't.</span>
-                </h1>
-                <p className="hero-subtitle">   Experience a financial app built for modern life. Fully encrypted secure chat, painless payments, unified savings circles, and instantly liquid crypto accounts.       </p>
-                <div className="hero-buttons">
-                <Link to="/EarlyAccess" className="btn-affiliate"> Get Early Access</Link>
-                <Link to="/watchdemo" className="btn-waitlist">Watch Live Demo</Link>
-                </div>
-            </div>
-
-        </section>
-
-       </>
-    )
+  return (
+    <Hero
+      badge="FEATURES"
+      title="Everything you need."
+      accentTitle="Nothing you don't."
+      subtitle="Experience a financial app built for modern life. Fully encrypted secure chat, painless payments, unified savings circles, and instantly liquid crypto accounts."
+      actions={[
+        { to: '/EarlyAccess', label: 'Get Early Access' },
+        { to: '/watchdemo', label: 'Watch Live Demo', variant: 'outline' },
+      ]}
+    />
+  )
 }

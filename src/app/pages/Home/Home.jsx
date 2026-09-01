@@ -1,4 +1,3 @@
-import './Home.css'
 import React from 'react'
 import HomePageHero from '../../components/HomeHero/HomePageHero'
 import MockUp from '@/app/components/Mockup/Mockup'

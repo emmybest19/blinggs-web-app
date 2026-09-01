@@ -1,4 +1,3 @@
-import './Features.css'
 import FeatureHero from '@/app/components/featureHero/featureHero'
 import FeatureChat from '@/app/components/Featurechat/FeatureChat'
 import FeaturePayment from '@/app/components/FeaturePayments/FeaturePayment'
