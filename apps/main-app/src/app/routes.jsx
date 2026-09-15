@@ -5,10 +5,10 @@ import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home/Home'
 import Features from './pages/Features/Features'
 import HowItWorks from './pages/HowItWorks/HowItWorks'
-import Blog from './pages/Blog/Blog'
 import FAQ from './pages/FAQ/FAQ'
 
 import { AboutPage } from '@features/about'
+import { BlogPage } from '@features/blog'
 import {
     CookiesPolicyPage,
     PrivacyPolicyPage,
@@ -38,7 +38,11 @@ const router = createBrowserRouter([
             },
             {
                 path: 'blog',
-                element: <Blog />
+                element: <BlogPage />
+            },
+            {
+                path: 'blog/:slug',
+                element: <BlogPage />
             },
 
             {
