@@ -1,0 +1,27 @@
+packages:
+  - 'apps/*'
+  - 'packages/*'
+
+# esbuild's postinstall resolves its platform binary — Vite cannot bundle
+# without it, so this build script is required rather than optional.
+allowBuilds:
+  esbuild: true
+
+# Single source of truth for dependency versions. Apps and packages declare
+# `"react": "catalog:"` rather than a range, so every workspace moves together
+# and no two apps can drift onto different React or Vite majors.
+catalog:
+  '@eslint/js': ^9.39.1
+  '@tailwindcss/vite': ^4.1.18
+  '@types/react': ^19.2.5
+  '@types/react-dom': ^19.2.3
+  '@vitejs/plugin-react': ^5.1.1
+  eslint: ^9.39.1
+  eslint-plugin-react-hooks: ^7.0.1
+  eslint-plugin-react-refresh: ^0.4.24
+  globals: ^16.5.0
+  react: ^19.2.0
+  react-dom: ^19.2.0
+  react-router-dom: ^7.18.2
+  tailwindcss: ^4.1.18
+  vite: ^7.3.6

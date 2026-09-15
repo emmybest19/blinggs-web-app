@@ -1,0 +1,52 @@
+/*
+ * Base layer for every admin console. Imported after Tailwind and the shared
+ * tokens, so consoles get identical chrome without copying any of it.
+ */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /*
+   * Admin surfaces are dense and data-heavy — headings stay in the UI font
+   * rather than the marketing site's Nunito.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
+    font-weight: 600;
+  }
+
+  /* Keyboard focus must stay obvious on a console people operate all day. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-brand) 30%, transparent);
+  }
+
+  /* Dark scrollbars — the default light ones tear holes in the layout. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border-strong) transparent;
+  }
+}

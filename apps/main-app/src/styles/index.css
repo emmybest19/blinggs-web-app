@@ -1,0 +1,78 @@
+@import "@blingg/theme/fonts.css";
+@import "tailwindcss";
+@import "@blingg/theme/tokens.css";
+
+/*
+ * Colours, fonts and status tokens now come from @blingg/theme so the
+ * marketing site and the admin consoles cannot drift apart.
+ *
+ * Breakpoints stay here. They mirror the values the original stylesheets were
+ * authored against, so the responsive design is preserved exactly, and they
+ * intentionally REPLACE Tailwind's defaults rather than sitting alongside them.
+ * The admin consoles use Tailwind's standard scale instead, which is why this
+ * block is app-local and not in the shared theme.
+ *
+ * The originals were `max-width` (desktop-first) queries, which include the
+ * boundary pixel. These are `min-width`, so sm/lg/xl sit one pixel higher
+ * (481/769/1025) to land on the same side of each boundary.
+ */
+@theme {
+  --breakpoint-xs: 375px;
+  --breakpoint-sm: 481px;
+  --breakpoint-md: 600px;
+  --breakpoint-lg: 769px;
+  --breakpoint-xl: 1025px;
+  --breakpoint-2xl: 1200px;
+  --breakpoint-3xl: 1440px;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /*
+   * The original stylesheets never reset line-height, so everything inherited
+   * the browser's `normal`. Tailwind's preflight defaults it to 1.5, which
+   * grows every unstyled text box — reset it to keep the existing rhythm.
+   * Components that set their own leading are unaffected.
+   */
+  html {
+    line-height: normal;
+  }
+
+  body {
+    background-color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  /*
+   * The old page stylesheets applied Nunito to p/label/span as well as the
+   * headings. Because every stylesheet was bundled globally, that applied
+   * site-wide — keeping it here preserves the current typography.
+   */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  label,
+  span {
+    font-family: var(--font-heading);
+  }
+
+  main,
+  section {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+}

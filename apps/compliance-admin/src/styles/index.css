@@ -1,0 +1,11 @@
+@import "@blingg/theme/fonts.css";
+@import "tailwindcss";
+@import "@blingg/theme/tokens.css";
+@import "@blingg/admin-kit/admin.css";
+
+/*
+ * Tailwind only auto-scans this app's own source tree. The shell, tables and
+ * badges live in @blingg/admin-kit, so that package has to be registered as a
+ * source too — without this line the sidebar and data tables render unstyled.
+ */
+@source "../../../../packages/admin-kit/src";

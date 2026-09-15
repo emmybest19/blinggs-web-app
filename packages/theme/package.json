@@ -1,0 +1,15 @@
+{
+  "name": "@blingg/theme",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Design tokens shared by every Blingg surface.",
+  "exports": {
+    "./tokens.css": "./tokens.css",
+    "./fonts.css": "./fonts.css"
+  },
+  "files": [
+    "tokens.css",
+    "fonts.css"
+  ]
+}

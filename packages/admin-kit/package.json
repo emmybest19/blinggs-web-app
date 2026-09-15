@@ -1,0 +1,29 @@
+{
+  "name": "@blingg/admin-kit",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Shell, auth guard and UI primitives shared by the six Blingg admin consoles.",
+  "exports": {
+    ".": "./src/index.js",
+    "./admin.css": "./src/styles/admin.css"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "dependencies": {
+    "@blingg/theme": "workspace:*"
+  },
+  "devDependencies": {
+    "@blingg/eslint-config": "workspace:*",
+    "eslint": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-router-dom": "catalog:"
+  }
+}

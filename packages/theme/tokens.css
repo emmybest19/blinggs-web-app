@@ -1,0 +1,64 @@
+/*
+ * Blingg design tokens — the single palette behind the marketing site and all
+ * six admin consoles.
+ *
+ * Import this AFTER `@import "tailwindcss"`. @theme blocks merge last-wins, so
+ * loading it first would let Tailwind's own defaults overwrite --font-sans and
+ * friends. Web fonts live in ./fonts.css, which must come first of all because
+ * `@import url()` is only legal at the top of a stylesheet.
+ *
+ * Deliberately NOT in here: breakpoints. main-app carries its own bespoke
+ * scale, inherited from the stylesheets it was migrated from; the admin
+ * consoles use Tailwind's defaults. Sharing one scale would force one of those
+ * two groups onto the wrong one.
+ */
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Nunito", sans-serif;
+
+  /* Neutral ramp — darkest to lightest */
+  --color-ink-deep: #0a0a0a;
+  --color-ink: #171717;
+  --color-ink-soft: #1a1a1a;
+  --color-ink-line: #292929;
+
+  /* Brand */
+  --color-brand: #21c7b0;
+  --color-brand-dark: #1bbca9;
+
+  /* Muted text */
+  --color-muted: #a0a0a0;
+  --color-muted-dim: #8a8a8a;
+  --color-muted-dimmer: #777777;
+  --color-faint: #e8e8e8;
+
+  /* Admin surfaces — panels stacked above the page ground */
+  --color-surface: #141414;
+  --color-surface-raised: #1c1c1c;
+  --color-surface-hover: #222222;
+  --color-border: #282828;
+  --color-border-strong: #343434;
+
+  /* Admin text */
+  --color-text: #e6e6e6;
+  --color-text-dim: #8b8e91;
+  --color-text-faint: #6b7073;
+
+  /* Status */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /*
+   * Per-console accent. Each admin app paints its sidebar mark, active nav item
+   * and focus rings with its own hue, so staff can tell at a glance which
+   * console they are looking at.
+   */
+  --color-domain-super: #a78bfa;
+  --color-domain-finance: #21c7b0;
+  --color-domain-compliance: #3b82f6;
+  --color-domain-support: #f59e0b;
+  --color-domain-community: #ec4899;
+  --color-domain-security: #ef4444;
+}

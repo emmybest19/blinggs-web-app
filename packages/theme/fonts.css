@@ -1,0 +1,6 @@
+/*
+ * Web fonts, kept separate from tokens.css because `@import url()` is only
+ * valid at the very top of a stylesheet — before `@import "tailwindcss"`.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
