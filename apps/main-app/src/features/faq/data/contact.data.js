@@ -1,12 +1,4 @@
-/**
- * Help-centre contact details.
- *
- * NOTE: these come from the FAQ design and CONFLICT with the legal pages —
- * the policies give hello@blinggapp.com / legal@blinggapp.com and a Calabar
- * registered address, while the design shows support@blingg.com and a Lagos
- * office. Both can legitimately be true (a support desk and an office are not
- * the registered entity), but the domain differs too, so confirm before launch.
- */
+
 export const contactCopy = {
   title: 'Need more help?',
   description:
@@ -26,7 +18,7 @@ export const contactChannels = [
     id: 'office',
     icon: 'pin',
     label: 'Visit Us',
-    value: '12 Glover Road, Ikoyi, Lagos',
+    value: 'No 14 Diamond Street Calabar, Nigeria',
   },
 ]
 
@@ -42,7 +34,7 @@ export const contactFields = [
     name: 'email',
     label: 'Professional Email',
     type: 'email',
-    placeholder: 'you@company.com',
+    placeholder: 'example@gmail.com',
     autoComplete: 'email',
   },
   {

@@ -1,3 +1,5 @@
+import Reveal from '@shared/ui/Reveal'
+
 import { relatedArticles } from '../data/articles.data'
 import ArticleBody from './ArticleBody'
 import ArticleCover from './ArticleCover'
@@ -11,27 +13,40 @@ export default function ArticleView({ article }) {
 
   return (
     <main className="w-full max-w-full overflow-x-clip bg-ink-deep">
-      <ArticleHeader article={article} />
+      <Reveal>
+        <ArticleHeader article={article} />
+      </Reveal>
 
       {/* Cover */}
-      <div className="px-4 xs:px-5 sm:px-8 lg:px-12 xl:px-20">
-        <div className="mx-auto w-full max-w-[1180px]">
-          <ArticleCover article={article} />
+      <Reveal>
+        <div className="px-4 xs:px-5 sm:px-8 lg:px-12 xl:px-20">
+          <div className="mx-auto w-full max-w-[1180px]">
+            <ArticleCover article={article} />
+          </div>
         </div>
-      </div>
+      </Reveal>
 
-      {/* Share rail + body */}
+      {/*
+        * The grid itself stays un-animated: ShareRail is `lg:sticky`, and a
+        * sticky child under an animating transform is not worth the risk.
+        */}
       <div className="px-4 py-12 xs:px-5 sm:px-8 sm:py-16 lg:px-12 xl:px-20">
         <div className="mx-auto grid w-full max-w-[1180px] grid-cols-1 gap-8 lg:grid-cols-[150px_minmax(0,1fr)] lg:gap-12">
           <ShareRail article={article} />
 
-          <article className="min-w-0 max-w-[720px]">
-            <ArticleBody article={article} />
-          </article>
+          {/* `once` — this is the prose someone is reading. It fades in, then
+            * stays put however they scroll through it. */}
+          <Reveal once className="min-w-0">
+            <article className="max-w-[720px]">
+              <ArticleBody article={article} />
+            </article>
+          </Reveal>
         </div>
       </div>
 
-      <RelatedArticles articles={related} />
+      <Reveal>
+        <RelatedArticles articles={related} />
+      </Reveal>
     </main>
   )
 }

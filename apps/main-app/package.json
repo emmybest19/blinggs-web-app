@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@blingg/theme": "workspace:*",
+    "framer-motion": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-router-dom": "catalog:"

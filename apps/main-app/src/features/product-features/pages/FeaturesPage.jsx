@@ -1,3 +1,5 @@
+import Reveal from '@shared/ui/Reveal'
+
 import ConvertToNaira from '../components/ConvertToNaira'
 import FeatureChat from '../components/FeatureChat'
 import FeaturePayments from '../components/FeaturePayments'
@@ -8,12 +10,29 @@ import SaveTogether from '../components/SaveTogether'
 export default function FeaturesPage() {
   return (
     <>
-      <FeaturesHero />
-      <FeatureChat />
-      <FeaturePayments />
-      <Groups />
-      <SaveTogether />
-      <ConvertToNaira />
+      <Reveal>
+        <FeaturesHero />
+      </Reveal>
+
+      <Reveal>
+        <FeatureChat />
+      </Reveal>
+
+      <Reveal>
+        <FeaturePayments />
+      </Reveal>
+
+      <Reveal>
+        <Groups />
+      </Reveal>
+
+      <Reveal>
+        <SaveTogether />
+      </Reveal>
+
+      <Reveal>
+        <ConvertToNaira />
+      </Reveal>
     </>
   )
 }

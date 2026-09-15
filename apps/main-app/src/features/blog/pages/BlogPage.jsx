@@ -1,5 +1,7 @@
 import { useSearchParams } from 'react-router-dom'
 
+import Reveal from '@shared/ui/Reveal'
+
 import ArticleGrid from '../components/ArticleGrid'
 import BlogHeader from '../components/BlogHeader'
 import FeaturedArticle from '../components/FeaturedArticle'
@@ -21,19 +23,28 @@ export default function BlogPage() {
 
   return (
     <main className="w-full max-w-full overflow-x-clip bg-ink-deep pb-16 sm:pb-20">
-      <BlogHeader />
+      <Reveal>
+        <BlogHeader />
+      </Reveal>
 
       {/* The featured article only belongs at the top of the first page */}
-      {page === 1 && <FeaturedArticle article={featuredArticle} />}
+      {page === 1 && (
+        <Reveal>
+          <FeaturedArticle article={featuredArticle} />
+        </Reveal>
+      )}
 
-      <section className="px-4 pt-10 xs:px-5 sm:px-8 sm:pt-14 lg:px-12 xl:px-20">
-        <div className="mx-auto w-full max-w-[1180px]">
-          <ArticleGrid articles={articlesForPage(page)} />
+      <Reveal>
+        <section className="px-4 pt-10 xs:px-5 sm:px-8 sm:pt-14 lg:px-12 xl:px-20">
+          <div className="mx-auto w-full max-w-[1180px]">
+            <ArticleGrid articles={articlesForPage(page)} />
 
-          <Pagination page={page} totalPages={totalPages} pageHref={pageHref} />
-        </div>
-      </section>
+            <Pagination page={page} totalPages={totalPages} pageHref={pageHref} />
+          </div>
+        </section>
+      </Reveal>
 
+      {/* Holds the newsletter email field — see the note in Reveal.jsx. */}
       <NewsletterCta />
     </main>
   )

@@ -1,3 +1,5 @@
+import Reveal from '@shared/ui/Reveal'
+
 import ComingSoon from '../components/ComingSoon'
 import EverythingYouNeed from '../components/EverythingYouNeed'
 import HomeHero from '../components/HomeHero'
@@ -9,13 +11,33 @@ import Testimonials from '../components/Testimonials'
 export default function HomePage() {
   return (
     <>
-      <HomeHero />
-      <Mockup />
-      <EverythingYouNeed />
-      <StartInMinutes />
-      <HomeStats />
-      <Testimonials />
-      <ComingSoon />
+      <Reveal>
+        <HomeHero />
+      </Reveal>
+
+      <Reveal>
+        <Mockup />
+      </Reveal>
+
+      <Reveal>
+        <EverythingYouNeed />
+      </Reveal>
+
+      <Reveal>
+        <StartInMinutes />
+      </Reveal>
+
+      <Reveal>
+        <HomeStats />
+      </Reveal>
+
+      <Reveal>
+        <Testimonials />
+      </Reveal>
+
+      <Reveal>
+        <ComingSoon />
+      </Reveal>
     </>
   )
 }
