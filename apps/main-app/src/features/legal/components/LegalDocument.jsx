@@ -107,7 +107,7 @@ export default function LegalDocument({ document: doc }) {
 
             {/* Closing */}
             {doc.closing && (
-              <section className="mt-10 rounded-xl border border-ink-line bg-[#141414] px-5 py-7 sm:px-7 sm:py-8">
+              <section className="mt-10 rounded-xl border border-ink-line bg-surface px-5 py-7 sm:px-7 sm:py-8">
                 <h2 className="mb-4 text-[15px] font-semibold tracking-[-0.01em] text-[#e8e8e8] sm:text-[17px]">
                   {doc.closing.title}
                 </h2>

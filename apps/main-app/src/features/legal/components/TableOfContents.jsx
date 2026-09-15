@@ -34,7 +34,7 @@ export default function TableOfContents({ sections, activeId }) {
   return (
     <>
       {/* Mobile / tablet */}
-      <details className="mb-8 rounded-[10px] border border-ink-line bg-[#141414] xl:hidden">
+      <details className="mb-8 rounded-[10px] border border-ink-line bg-surface xl:hidden">
         <summary className="cursor-pointer list-none px-4 py-3 font-sans text-[13px] font-medium text-[#c8cccf] marker:hidden">
           Contents
           <span className="float-right text-[#6f7477]">

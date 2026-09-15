@@ -1,3 +1,5 @@
+import { Fragment } from 'react'
+
 /**
  * Renders the block array of a legal section.
  *
@@ -65,11 +67,77 @@ export default function LegalBlocks({ blocks }) {
           </p>
         )
 
+      case 'flow':
+        return (
+          <div
+            key={key}
+            className="mt-5 flex flex-wrap items-center gap-2 rounded-[10px] border border-ink-line bg-surface px-4 py-3.5 first:mt-0"
+          >
+            {block.steps.map((step, stepIndex) => (
+              <Fragment key={step}>
+                {stepIndex > 0 && (
+                  <span aria-hidden="true" className="text-[13px] text-[#2ca897]">
+                    &rarr;
+                  </span>
+                )}
+
+                <span className="font-sans text-[12px] leading-[1.5] text-[#b9bdc0] sm:text-[13px]">
+                  {step}
+                </span>
+              </Fragment>
+            ))}
+          </div>
+        )
+
+      case 'table':
+        // Tables are the one thing allowed to scroll sideways on small screens.
+        return (
+          <div key={key} className="mt-5 w-full overflow-x-auto first:mt-0">
+            <table className="w-full min-w-[520px] border-collapse rounded-[10px] text-left">
+              <thead>
+                <tr className="border-b border-ink-line">
+                  {block.columns.map((column) => (
+                    <th
+                      key={column}
+                      scope="col"
+                      className="px-3 pb-2.5 font-sans text-[11px] font-semibold tracking-wide text-[#6f7477] uppercase first:pl-0 last:pr-0"
+                    >
+                      {column}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+
+              <tbody>
+                {block.rows.map((row) => (
+                  <tr
+                    key={row[0]}
+                    className="border-b border-ink-soft/70 last:border-b-0"
+                  >
+                    {row.map((cell, cellIndex) => (
+                      <td
+                        key={`${row[0]}-${cellIndex}`}
+                        className={`px-3 py-3 font-sans text-[12px] leading-[1.5] first:pl-0 last:pr-0 sm:text-[13px] ${
+                          cellIndex === 0
+                            ? 'font-medium whitespace-nowrap text-[#d6d6d6]'
+                            : 'text-[#9a9fa3]'
+                        }`}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+
       case 'contact':
         return (
           <dl
             key={key}
-            className="mt-4 flex flex-col gap-3 rounded-[10px] border border-ink-line bg-[#141414] px-5 py-5 first:mt-0"
+            className="mt-4 flex flex-col gap-3 rounded-[10px] border border-ink-line bg-surface px-5 py-5 first:mt-0"
           >
             {block.entries.map((entry) => (
               <div
