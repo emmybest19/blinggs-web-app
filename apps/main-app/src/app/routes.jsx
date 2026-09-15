@@ -8,6 +8,7 @@ import HowItWorks from './pages/HowItWorks/HowItWorks'
 import Blog from './pages/Blog/Blog'
 import FAQ from './pages/FAQ/FAQ'
 
+import { AboutPage } from '@features/about'
 import {
     CookiesPolicyPage,
     PrivacyPolicyPage,
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
             {
                 path: 'faq',
                 element: <FAQ />
+            },
+
+            {
+                path: 'about',
+                element: <AboutPage />
             },
 
             {
