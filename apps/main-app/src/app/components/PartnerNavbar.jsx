@@ -1,0 +1,34 @@
+import { affiliateButton, buttonGroup, waitlistButton } from '@shared/ui/ctaStyles'
+import NavShell from '@shared/ui/NavShell'
+
+import { partnerLinks } from '@features/partner'
+
+const NAV_LINKS = [
+  { to: '/features', label: 'Features' },
+  { to: '/how-it-works', label: 'How it works' },
+  { to: '/affiliate', label: 'Partner Program' },
+]
+
+/**
+ * Header for the partner programme. Same chrome as the marketing header, but
+ * the CTAs point at the partner portal and application rather than the
+ * waitlist.
+ *
+ * Both are plain anchors, not router Links: neither destination exists yet.
+ * See partnerLinks.
+ */
+export default function PartnerNavbar() {
+  return (
+    <NavShell links={NAV_LINKS}>
+      <div className={buttonGroup}>
+        <a href={partnerLinks.portal} className={waitlistButton}>
+          Portal Login
+        </a>
+
+        <a href={partnerLinks.apply} className={affiliateButton}>
+          Apply Now
+        </a>
+      </div>
+    </NavShell>
+  )
+}
