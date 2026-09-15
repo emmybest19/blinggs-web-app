@@ -1,21 +1,17 @@
-import { useMemo } from 'react'
-
-import { useActiveSection } from '../hooks/useActiveSection'
 import LegalBlocks from './LegalBlocks'
-import TableOfContents from './TableOfContents'
 
 /**
  * Renders any legal document descriptor from ../data. Section numbers come from
  * position, so inserting a clause renumbers the rest automatically.
+ *
+ * A single centred column: the measure is capped at 760px, which is the point
+ * where a line of this size stays comfortable to read.
+ *
+ * Section ids are still emitted, so deep links such as
+ * /privacy-policy#data-retention keep working even though nothing on the page
+ * links to them any more.
  */
 export default function LegalDocument({ document: doc }) {
-  const sectionIds = useMemo(
-    () => doc.sections.map((section) => section.id),
-    [doc.sections]
-  )
-
-  const activeId = useActiveSection(sectionIds)
-
   return (
     <main className="box-border w-full max-w-full overflow-x-clip bg-ink-deep pb-16 sm:pb-20">
       {/* Header */}
@@ -25,7 +21,7 @@ export default function LegalDocument({ document: doc }) {
           className="pointer-events-none absolute top-[-140px] left-1/2 h-[300px] w-[600px] -translate-x-1/2 rounded-full bg-[rgba(27,230,186,0.07)] blur-[90px]"
         />
 
-        <div className="relative z-[1] mx-auto w-full max-w-[1180px]">
+        <div className="relative z-[1] mx-auto w-full max-w-[760px]">
           <p className="mb-3 font-sans text-[10px] font-semibold tracking-[0.12em] text-[#2ca897] uppercase sm:text-[11px]">
             Legal
           </p>
@@ -63,61 +59,51 @@ export default function LegalDocument({ document: doc }) {
       </header>
 
       {/* Body */}
-      <div className="mx-auto w-full max-w-[1180px] px-4 pt-9 xs:px-5 sm:px-8 sm:pt-12 lg:px-12 xl:px-20">
-        <div className="flex flex-col gap-10 xl:flex-row xl:items-start xl:gap-14">
-          <div className="w-full shrink-0 xl:w-[260px]">
-            <TableOfContents sections={doc.sections} activeId={activeId} />
-          </div>
-
-          <article className="w-full min-w-0 max-w-[760px]">
-            {/* Intro */}
-            {doc.intro?.length > 0 && (
-              <div className="mb-12 border-b border-ink-soft pb-10">
-                {doc.intro.map((text) => (
-                  <p
-                    key={text}
-                    className="mt-4 font-sans text-[13px] leading-[1.8] text-[#9a9fa3] first:mt-0 xs:text-sm sm:text-[15px]"
-                  >
-                    {text}
-                  </p>
-                ))}
-              </div>
-            )}
-
-            {/* Sections */}
-            {doc.sections.map((section, index) => (
-              <section
-                key={section.id}
-                id={section.id}
-                // Clears the sticky navbar when jumped to from the contents.
-                className="scroll-mt-[84px] border-b border-ink-soft/70 py-8 first:pt-0 last:border-b-0 sm:py-10"
+      <article className="mx-auto w-full max-w-[760px] px-4 pt-9 xs:px-5 sm:px-8 sm:pt-12 lg:px-0">
+        {/* Intro */}
+        {doc.intro?.length > 0 && (
+          <div className="mb-12 border-b border-ink-soft pb-10">
+            {doc.intro.map((text) => (
+              <p
+                key={text}
+                className="mt-4 font-sans text-[13px] leading-[1.8] text-[#9a9fa3] first:mt-0 xs:text-sm sm:text-[15px]"
               >
-                <h2 className="mb-4 flex gap-3 text-[16px] leading-[1.3] font-semibold tracking-[-0.01em] text-[#e8e8e8] sm:text-[19px]">
-                  <span className="shrink-0 font-sans text-[#2ca897] tabular-nums">
-                    {index + 1}.
-                  </span>
-                  <span>{section.title}</span>
-                </h2>
-
-                <div className="xl:pl-[30px]">
-                  <LegalBlocks blocks={section.blocks} />
-                </div>
-              </section>
+                {text}
+              </p>
             ))}
+          </div>
+        )}
 
-            {/* Closing */}
-            {doc.closing && (
-              <section className="mt-10 rounded-xl border border-ink-line bg-surface px-5 py-7 sm:px-7 sm:py-8">
-                <h2 className="mb-4 text-[15px] font-semibold tracking-[-0.01em] text-[#e8e8e8] sm:text-[17px]">
-                  {doc.closing.title}
-                </h2>
+        {/* Sections */}
+        {doc.sections.map((section, index) => (
+          <section
+            key={section.id}
+            id={section.id}
+            // Clears the sticky navbar when arrived at via a #hash link.
+            className="scroll-mt-[84px] border-b border-ink-soft/70 py-8 first:pt-0 last:border-b-0 sm:py-10"
+          >
+            <h2 className="mb-4 flex gap-3 text-[16px] leading-[1.3] font-semibold tracking-[-0.01em] text-[#e8e8e8] sm:text-[19px]">
+              <span className="shrink-0 font-sans text-[#2ca897] tabular-nums">
+                {index + 1}.
+              </span>
+              <span>{section.title}</span>
+            </h2>
 
-                <LegalBlocks blocks={doc.closing.blocks} />
-              </section>
-            )}
-          </article>
-        </div>
-      </div>
+            <LegalBlocks blocks={section.blocks} />
+          </section>
+        ))}
+
+        {/* Closing */}
+        {doc.closing && (
+          <section className="mt-10 rounded-xl border border-ink-line bg-surface px-5 py-7 sm:px-7 sm:py-8">
+            <h2 className="mb-4 text-[15px] font-semibold tracking-[-0.01em] text-[#e8e8e8] sm:text-[17px]">
+              {doc.closing.title}
+            </h2>
+
+            <LegalBlocks blocks={doc.closing.blocks} />
+          </section>
+        )}
+      </article>
     </main>
   )
 }
