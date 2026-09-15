@@ -2,18 +2,17 @@ import { createBrowserRouter } from 'react-router-dom'
 
 import MainLayout from './layouts/MainLayout'
 
-import Home from './pages/Home/Home'
-import Features from './pages/Features/Features'
-import HowItWorks from './pages/HowItWorks/HowItWorks'
-
 import { AboutPage } from '@features/about'
 import { ArticlePage, BlogPage } from '@features/blog'
 import { FaqPage } from '@features/faq'
+import { HomePage } from '@features/home'
+import { HowItWorksPage } from '@features/how-it-works'
 import {
     CookiesPolicyPage,
     PrivacyPolicyPage,
     TermsOfServicePage,
 } from '@features/legal'
+import { FeaturesPage } from '@features/product-features'
 import { WaitlistPage } from '@features/waitlist'
 
 const router = createBrowserRouter([
@@ -22,59 +21,21 @@ const router = createBrowserRouter([
         element: <MainLayout />,
 
         children: [
+            { index: true, element: <HomePage /> },
 
-            {
-                index: true,
-                element: <Home />
-            },
+            { path: 'features', element: <FeaturesPage /> },
+            { path: 'how-it-works', element: <HowItWorksPage /> },
 
-            {
-                path: 'features',
-                element: <Features />
-            },
-            {
-                path: 'how-it-works',
-                element: <HowItWorks />
-            },
-            {
-                path: 'blog',
-                element: <BlogPage />
-            },
-            {
-                path: 'blog/:slug',
-                element: <ArticlePage />
-            },
+            { path: 'blog', element: <BlogPage /> },
+            { path: 'blog/:slug', element: <ArticlePage /> },
 
-            {
-                path: 'faq',
-                element: <FaqPage />
-            },
+            { path: 'faq', element: <FaqPage /> },
+            { path: 'about', element: <AboutPage /> },
+            { path: 'waitlist', element: <WaitlistPage /> },
 
-            {
-                path: 'about',
-                element: <AboutPage />
-            },
-
-            {
-                path: 'waitlist',
-                element: <WaitlistPage />
-            },
-
-            {
-                path: 'terms-of-service',
-                element: <TermsOfServicePage />
-            },
-
-            {
-                path: 'privacy-policy',
-                element: <PrivacyPolicyPage />
-            },
-
-            {
-                path: 'cookies-policy',
-                element: <CookiesPolicyPage />
-            }
-
+            { path: 'terms-of-service', element: <TermsOfServicePage /> },
+            { path: 'privacy-policy', element: <PrivacyPolicyPage /> },
+            { path: 'cookies-policy', element: <CookiesPolicyPage /> },
         ]
     }
 ])
