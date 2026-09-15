@@ -1,18 +1,30 @@
 /**
  * Blog content.
  *
- * Articles use the same { type, ... } block shape as the legal documents, so
- * the body renderer stays a switch over known block types rather than raw HTML.
+ * Two summaries per article, because the designs use two different ones:
+ *   `excerpt` — the listing card summary (blog index, related cards)
+ *   `dek`     — the standfirst under the title on the article page
+ * `dek` falls back to `excerpt` when an article does not define its own.
  *
- * COVER IMAGES: none of the assets in public/ are usable as cover art — they
- * are small white icons. Every article therefore carries `cover: null` and a
- * `tone`, and ArticleCover paints a designed gradient in place of the image.
- * Drop a real file in public/blog/ and set `cover: '/blog/<file>.jpg'` to
- * replace it; nothing else has to change.
+ * Article bodies use the same { type, ... } block shape as the legal documents,
+ * so the renderer stays a switch over known block types rather than raw HTML.
+ *
+ * COVER IMAGES: no asset in public/ is usable as cover art — they are small
+ * white icons. Every article therefore carries `cover: null` plus a `tone`, and
+ * ArticleCover paints a designed gradient in place of the photograph. Drop a
+ * file in public/blog/ and set `cover: '/blog/<file>.jpg'` to replace it.
  */
 
 /** Canonical origin used to build share links. Must match the deployed domain. */
 export const siteUrl = 'https://blinggapp.com'
+
+/** Cards shown per page on the index, matching the design's 2 x 3 grid. */
+export const PAGE_SIZE = 6
+
+export const author = {
+  name: 'Blingg Team',
+  role: 'Product & Tech',
+}
 
 export const articles = [
   {
@@ -20,12 +32,12 @@ export const articles = [
     category: 'Security',
     tone: 'teal',
     cover: null,
-    coverAlt: 'Bitcoin to Naira conversion flow',
+    coverAlt: 'Bitcoin to Naira conversion network',
     title: 'Understanding Bitcoin to Naira Conversion',
     excerpt:
-      'A detailed look at minimizing transaction slippage, evaluating peer-to-peer rates, and securing your exchange transactions in one smooth app flow.',
-    author: 'Blingg Engineering',
-    publishedOn: 'Jun 15, 2025',
+      "Navigating conversion spreads and real-time market rates doesn't have to be complicated. We break down how Blingg delivers low-spread paths natively.",
+    dek: 'A detailed look at minimizing transaction slippage, evaluating peer-to-peer rates, and securing your exchange transactions in one smooth app flow.',
+    publishedAt: '2025-06-15',
     readTime: '5 Min Read',
     featured: true,
     sections: [
@@ -79,49 +91,85 @@ export const articles = [
   },
 
   /*
-   * The three articles below appear as cards in "Related Articles". The design
-   * supplies their card copy only, so `sections` is empty and the article view
-   * shows an honest "being written" state rather than invented body copy.
+   * The six below are the index grid. The designs supply their card copy only,
+   * so `sections` is empty and the article page shows an honest "being written"
+   * state rather than invented body copy.
    */
   {
-    slug: 'why-end-to-end-encryption-matters',
-    category: 'Security',
+    slug: '5-tips-for-secure-online-payments',
+    category: 'Payments',
     tone: 'indigo',
     cover: null,
-    coverAlt: 'Encrypted message network',
-    title: 'Why End-to-End Encryption Matters',
+    coverAlt: 'Isometric secure payment network',
+    title: '5 Tips for Secure Online Payments',
     excerpt:
-      'Every transaction message is a private deal. We unpack the math behind keeping chats secure.',
-    author: 'Blingg Engineering',
-    publishedOn: 'Jun 02, 2025',
+      'Protect your digital wealth with these essential habits. Learn how multi-sig verification and transient payment routing safeguard your funds.',
+    publishedAt: '2025-06-12',
     readTime: '5 Min Read',
     sections: [],
   },
   {
-    slug: 'the-future-of-mobile-banking',
+    slug: 'how-group-savings-can-change-your-life',
+    category: 'Tips',
+    tone: 'emerald',
+    cover: null,
+    coverAlt: 'Connected savings network core',
+    title: 'How Group Savings Can Change Your Life',
+    excerpt:
+      "Pooling resources shouldn't be stressful. Discover the collaborative power of automated mutual saving targets with your flatmates.",
+    publishedAt: '2025-06-08',
+    readTime: '5 Min Read',
+    sections: [],
+  },
+  {
+    slug: 'the-future-of-mobile-banking-in-nigeria',
     category: 'Payments',
     tone: 'violet',
     cover: null,
     coverAlt: 'City skyline at night',
-    title: 'The Future of Mobile Banking',
+    title: 'The Future of Mobile Banking in Nigeria',
     excerpt:
-      'As instant rails expand rapidly across West Africa, mobile-first fintech integrations take over.',
-    author: 'Blingg Engineering',
-    publishedOn: 'May 21, 2025',
+      'As instant rails expand rapidly across West Africa, mobile-first fintech integrations are dismantling classical deposit barriers.',
+    publishedAt: '2025-05-29',
     readTime: '5 Min Read',
     sections: [],
   },
   {
     slug: 'crypto-trading-a-beginners-guide',
     category: 'Tips',
-    tone: 'emerald',
+    tone: 'amber',
     cover: null,
-    coverAlt: 'Crypto market orb',
+    coverAlt: 'Bitcoin held in a data mesh',
     title: "Crypto Trading: A Beginner's Guide",
     excerpt:
-      'Seamless on-off ramps let you trade stablecoins inside Blingg without external friction.',
-    author: 'Blingg Engineering',
-    publishedOn: 'May 09, 2025',
+      'New to crypto inside Blingg? Learn how seamless on-off ramps let you trade, send, and hold stablecoins without external friction.',
+    publishedAt: '2025-05-20',
+    readTime: '5 Min Read',
+    sections: [],
+  },
+  {
+    slug: 'why-end-to-end-encryption-matters',
+    category: 'Security',
+    tone: 'cyan',
+    cover: null,
+    coverAlt: 'Encrypted circuit landscape',
+    title: 'Why End-to-End Encryption Matters',
+    excerpt:
+      'Every transaction message is a private deal. We unpack the mathematics of keeping your financial chats absolutely unreadable to outsiders.',
+    publishedAt: '2025-05-15',
+    readTime: '5 Min Read',
+    sections: [],
+  },
+  {
+    slug: 'managing-your-finances-with-blingg',
+    category: 'Tips',
+    tone: 'emerald',
+    cover: null,
+    coverAlt: 'Blingg app on a phone',
+    title: 'Managing Your Finances with Blingg',
+    excerpt:
+      'Say goodbye to scattered apps. Budget, coordinate communal targets, trade, and chat inside one high-integrity super app.',
+    publishedAt: '2025-05-02',
     readTime: '5 Min Read',
     sections: [],
   },
@@ -130,9 +178,20 @@ export const articles = [
 export const featuredArticle =
   articles.find((article) => article.featured) ?? articles[0]
 
+/** Everything the index grid paginates over — the featured article is already
+ *  shown above it, so it is excluded here rather than appearing twice. */
+export const listedArticles = articles.filter((article) => !article.featured)
+
 export const findArticle = (slug) =>
   articles.find((article) => article.slug === slug)
 
-/** Everything except `slug`, capped — used for the Related Articles strip. */
+/** Used by the Related Articles strip on an article page. */
 export const relatedArticles = (slug, limit = 3) =>
   articles.filter((article) => article.slug !== slug).slice(0, limit)
+
+export const totalPages = Math.max(1, Math.ceil(listedArticles.length / PAGE_SIZE))
+
+export function articlesForPage(page) {
+  const start = (page - 1) * PAGE_SIZE
+  return listedArticles.slice(start, start + PAGE_SIZE)
+}

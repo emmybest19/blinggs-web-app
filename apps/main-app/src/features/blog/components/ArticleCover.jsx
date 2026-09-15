@@ -9,6 +9,8 @@ const TONES = {
   indigo: 'from-[#131a33] via-[#0c1121] to-[#070a13]',
   violet: 'from-[#241533] via-[#170d22] to-[#0b0714]',
   emerald: 'from-[#0d2b1c] via-[#091e14] to-[#05100b]',
+  amber: 'from-[#2e2110] via-[#1d150a] to-[#100b05]',
+  cyan: 'from-[#0b2630] via-[#081a21] to-[#050e12]',
 }
 
 const GLOWS = {
@@ -16,6 +18,8 @@ const GLOWS = {
   indigo: 'bg-[radial-gradient(circle,rgba(99,132,255,0.26)_0%,transparent_65%)]',
   violet: 'bg-[radial-gradient(circle,rgba(180,110,255,0.24)_0%,transparent_65%)]',
   emerald: 'bg-[radial-gradient(circle,rgba(52,211,153,0.26)_0%,transparent_65%)]',
+  amber: 'bg-[radial-gradient(circle,rgba(245,180,80,0.26)_0%,transparent_65%)]',
+  cyan: 'bg-[radial-gradient(circle,rgba(56,189,220,0.26)_0%,transparent_65%)]',
 }
 
 // Faint technical grid, echoing the data-mesh look of the cover artwork.

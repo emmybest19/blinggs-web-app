@@ -1,3 +1,5 @@
+import { author } from '../data/articles.data'
+import { formatDate } from '../lib/formatDate'
 import CategoryBadge from './CategoryBadge'
 
 /** Initials stand in for the author photo the design shows. */
@@ -24,25 +26,29 @@ export default function ArticleHeader({ article }) {
           {article.title}
         </h1>
 
+        {/* The article page uses the longer standfirst where one exists */}
         <p className="mt-5 max-w-[620px] font-sans text-[13px] leading-[1.7] text-[#8d9298] sm:text-[15px]">
-          {article.excerpt}
+          {article.dek ?? article.excerpt}
         </p>
 
-        {/* Byline */}
         <div className="mt-7 flex items-center justify-center gap-3">
           <span
             aria-hidden="true"
             className="flex size-9 shrink-0 items-center justify-center rounded-full border border-[rgba(45,209,189,0.25)] bg-[rgba(45,209,189,0.1)] font-sans text-[11px] font-semibold text-brand"
           >
-            {initialsOf(article.author)}
+            {initialsOf(author.name)}
           </span>
 
           <span className="text-left">
             <span className="block font-sans text-[12px] font-semibold text-[#e2e2e2] sm:text-[13px]">
-              Written by {article.author}
+              Written by {author.name}
             </span>
             <span className="block font-sans text-[11px] text-[#6f7477]">
-              Published {article.publishedOn} &middot; {article.readTime}
+              Published{' '}
+              <time dateTime={article.publishedAt}>
+                {formatDate(article.publishedAt)}
+              </time>{' '}
+              &middot; {article.readTime}
             </span>
           </span>
         </div>

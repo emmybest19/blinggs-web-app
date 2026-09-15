@@ -1,37 +1,40 @@
-import { Link, useParams } from 'react-router-dom'
+import { useSearchParams } from 'react-router-dom'
 
-import ArticleView from '../components/ArticleView'
-import { featuredArticle, findArticle } from '../data/articles.data'
+import ArticleGrid from '../components/ArticleGrid'
+import BlogHeader from '../components/BlogHeader'
+import FeaturedArticle from '../components/FeaturedArticle'
+import NewsletterCta from '../components/NewsletterCta'
+import Pagination from '../components/Pagination'
+import { articlesForPage, featuredArticle, totalPages } from '../data/articles.data'
 
-/**
- * Serves both routes: `/blog` shows the featured article, `/blog/:slug` shows
- * the one named in the URL.
- */
+/** The blog index at /blog. */
 export default function BlogPage() {
-  const { slug } = useParams()
-  const article = slug ? findArticle(slug) : featuredArticle
+  const [searchParams] = useSearchParams()
 
-  if (!article) {
-    return (
-      <main className="flex min-h-[60vh] w-full flex-col items-center justify-center gap-3 bg-ink-deep px-5 text-center">
-        <h1 className="text-[22px] font-bold text-[#e6e6e6] sm:text-[26px]">
-          Article not found
-        </h1>
+  // Clamp rather than 404: ?page=99 or ?page=abc should still show articles.
+  const requested = Number.parseInt(searchParams.get('page') ?? '1', 10)
+  const page = Number.isNaN(requested)
+    ? 1
+    : Math.min(Math.max(requested, 1), totalPages)
 
-        <p className="max-w-[420px] font-sans text-[13px] leading-[1.7] text-[#8d9298]">
-          We could not find an article at that address. It may have been moved
-          or renamed.
-        </p>
+  const pageHref = (number) => (number <= 1 ? '/blog' : `/blog?page=${number}`)
 
-        <Link
-          to="/blog"
-          className="mt-3 inline-flex h-10 items-center justify-center rounded-[9px] bg-brand-dark px-6 font-sans text-[13px] font-semibold text-[#071312] no-underline transition-all duration-250 hover:-translate-y-px hover:bg-[#25d1bb]"
-        >
-          Back to the blog
-        </Link>
-      </main>
-    )
-  }
+  return (
+    <main className="w-full max-w-full overflow-x-clip bg-ink-deep pb-16 sm:pb-20">
+      <BlogHeader />
 
-  return <ArticleView article={article} />
+      {/* The featured article only belongs at the top of the first page */}
+      {page === 1 && <FeaturedArticle article={featuredArticle} />}
+
+      <section className="px-4 pt-10 xs:px-5 sm:px-8 sm:pt-14 lg:px-12 xl:px-20">
+        <div className="mx-auto w-full max-w-[1180px]">
+          <ArticleGrid articles={articlesForPage(page)} />
+
+          <Pagination page={page} totalPages={totalPages} pageHref={pageHref} />
+        </div>
+      </section>
+
+      <NewsletterCta />
+    </main>
+  )
 }

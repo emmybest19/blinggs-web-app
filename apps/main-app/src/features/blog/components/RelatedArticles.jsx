@@ -12,7 +12,14 @@ export default function RelatedArticles({ articles }) {
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {articles.map((article) => (
-            <ArticleCard key={article.slug} article={article} />
+            // The related strip shows read time rather than a date, and drops
+            // the CTA line — the card itself is the link.
+            <ArticleCard
+              key={article.slug}
+              article={article}
+              meta="readTime"
+              cta={false}
+            />
           ))}
         </div>
       </div>
