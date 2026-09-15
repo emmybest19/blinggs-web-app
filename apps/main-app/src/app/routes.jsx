@@ -14,7 +14,7 @@ import {
     PrivacyPolicyPage,
     TermsOfServicePage,
 } from '@features/legal'
-import { PartnerPage } from '@features/partner'
+import { PartnerLoginPage, PartnerPage } from '@features/partner'
 import { FeaturesPage } from '@features/product-features'
 import { WaitlistPage } from '@features/waitlist'
 
@@ -60,6 +60,13 @@ const router = createBrowserRouter([
                     { index: true, element: <PartnerPage /> },
                 ]
             },
+
+            /*
+             * The portal sign-in is a sibling of the partner shell, not a child
+             * of it: an auth screen carries no site header and no footer. It
+             * still sits under RootLayout so it keeps scroll restoration.
+             */
+            { path: '/affiliate/login', element: <PartnerLoginPage /> },
         ]
     }
 ])

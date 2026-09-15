@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { affiliateButton, buttonGroup, waitlistButton } from '@shared/ui/ctaStyles'
 import NavShell from '@shared/ui/NavShell'
 
@@ -14,16 +16,16 @@ const NAV_LINKS = [
  * the CTAs point at the partner portal and application rather than the
  * waitlist.
  *
- * Both are plain anchors, not router Links: neither destination exists yet.
- * See partnerLinks.
+ * Portal Login is a router Link — that route exists. Apply Now is still a
+ * plain anchor because its destination does not. See partnerLinks.
  */
 export default function PartnerNavbar() {
   return (
     <NavShell links={NAV_LINKS}>
       <div className={buttonGroup}>
-        <a href={partnerLinks.portal} className={waitlistButton}>
+        <Link to={partnerLinks.portal} className={waitlistButton}>
           Portal Login
-        </a>
+        </Link>
 
         <a href={partnerLinks.apply} className={affiliateButton}>
           Apply Now

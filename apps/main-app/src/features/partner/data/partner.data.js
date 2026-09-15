@@ -5,21 +5,26 @@
  */
 
 /**
- * Every destination this page needs that does not exist yet.
+ * Every destination this page points at, in one place rather than scattered
+ * through the components.
  *
- * The partner terminal is a separate surface that has not been built, so both
- * login CTAs and the application flow point here rather than being scattered
- * through the components. Wiring them up later is an edit to this object and
- * nothing else.
+ * `portal` is a real route. The rest are still stubs — wiring one up is an
+ * edit here and a swap from <a href> to <Link to> at the call site.
  */
 export const partnerLinks = {
-  /* The partner terminal behind "Portal Login" / "Login to Dashboard". */
-  portal: '#',
-  /* The partner application form. */
+  /* Real route: the portal sign-in behind "Portal Login" and
+   * "Login to Dashboard". */
+  portal: '/affiliate/login',
+
+  /* Stub — the partner application form does not exist. */
   apply: '#',
-  /* Partner-specific terms. Deliberately NOT /terms-of-service: that document
-   * covers app users, not representatives. */
+
+  /* Stub — partner-specific terms. Deliberately NOT /terms-of-service: that
+   * document covers app users, not representatives. */
   terms: '#',
+
+  /* Stub — password recovery, linked from the portal sign-in. */
+  forgot: '#',
 }
 
 export const partnerHero = {

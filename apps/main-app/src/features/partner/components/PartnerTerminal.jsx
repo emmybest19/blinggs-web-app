@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { affiliateButton } from '@shared/ui/ctaStyles'
 
 import { partnerLinks, terminal } from '../data/partner.data'
@@ -99,13 +101,12 @@ export default function PartnerTerminal() {
                 />
               </div>
 
-              {/* Stubbed — the terminal does not exist yet. See partnerLinks. */}
-              <a
-                href={partnerLinks.portal}
+              <Link
+                to={partnerLinks.portal}
                 className={`${affiliateButton} mt-auto w-full sm:mt-6`}
               >
                 {milestone.cta}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
