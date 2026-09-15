@@ -28,13 +28,26 @@ import { m as M, useReducedMotion } from 'framer-motion'
  */
 const MARGIN = '-80px 0px -80px 0px'
 
+/*
+ * The three numbers that set the pace. Turn these rather than passing props at
+ * every call site, so the whole app keeps moving at one speed.
+ *
+ * EASE is the one that actually governs how fast this *feels*. An expo-out
+ * curve like [0.22, 1, 0.36, 1] spends most of its opacity change in the first
+ * fifth of the duration, so it reads as a snap however long DURATION is. This
+ * curve is far more even: the fade is still moving at the halfway mark.
+ */
+const DURATION = 0.9
+const DELAY = 0.15
+const EASE = [0.4, 0, 0.2, 1]
+
 export default function Reveal({
   children,
   className,
   once = false,
-  delay = 0,
-  y = 24,
-  duration = 0.55,
+  delay = DELAY,
+  y = 32,
+  duration = DURATION,
 }) {
   // Honours the OS "reduce motion" setting: no transform, no fade, no
   // observer — the content is simply always there.
@@ -50,7 +63,7 @@ export default function Reveal({
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, amount: 'some', margin: MARGIN }}
-      transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration, delay, ease: EASE }}
     >
       {children}
     </M.div>
