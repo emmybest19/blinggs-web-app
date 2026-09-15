@@ -8,7 +8,7 @@ import HowItWorks from './pages/HowItWorks/HowItWorks'
 import Blog from './pages/Blog/Blog'
 import FAQ from './pages/FAQ/FAQ'
 
-import { TermsOfServicePage } from '@features/legal'
+import { PrivacyPolicyPage, TermsOfServicePage } from '@features/legal'
 import { WaitlistPage } from '@features/waitlist'
 
 const router = createBrowserRouter([
@@ -49,6 +49,11 @@ const router = createBrowserRouter([
             {
                 path: 'terms-of-service',
                 element: <TermsOfServicePage />
+            },
+
+            {
+                path: 'privacy-policy',
+                element: <PrivacyPolicyPage />
             }
 
         ]

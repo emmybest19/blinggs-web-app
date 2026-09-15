@@ -35,7 +35,7 @@ const COLUMNS = [
   {
     title: 'Legal',
     links: [
-      { href: '#privacy', label: 'Privacy Policy' },
+      { to: '/privacy-policy', label: 'Privacy Policy' },
       { to: '/terms-of-service', label: 'Terms of Service' },
       { href: '#cookies', label: 'Cookie Policy' },
     ],
@@ -43,7 +43,7 @@ const COLUMNS = [
 ]
 
 const BOTTOM_LINKS = [
-  { href: '#privacy', label: 'Privacy' },
+  { to: '/privacy-policy', label: 'Privacy' },
   { to: '/terms-of-service', label: 'Terms' },
   { href: '#status', label: 'Staff Portal' },
 ]
