@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom'
 
+import { DEMO_ACCESS } from '../api/auth'
 import { partnerLinks } from '../data/partner.data'
 import { portalCopy } from '../data/portal.data'
 import { usePartnerSignIn } from '../hooks/usePartnerSignIn'
@@ -40,6 +41,14 @@ export default function PartnerSignInForm() {
       <p className="mt-3.5 font-sans text-[14px] leading-[1.65] text-[#868f99]">
         {portalCopy.subtitle}
       </p>
+
+      {/* Deliberately loud, and tied to the same flag: an open sign-in should
+        * never be able to ship without saying so on screen. */}
+      {DEMO_ACCESS && (
+        <p className="mt-5 rounded-[10px] border border-[rgba(245,158,11,0.3)] bg-[rgba(245,158,11,0.08)] px-4 py-3 font-sans text-[12.5px] leading-[1.6] text-[#f0b445]">
+          Demo mode — Sign In opens the dashboard without checking anything.
+        </p>
+      )}
 
       {justRegistered && (
         <p className="mt-5 rounded-[10px] border border-[rgba(33,199,176,0.25)] bg-[rgba(33,199,176,0.08)] px-4 py-3 font-sans text-[13px] leading-[1.6] text-brand">

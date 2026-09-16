@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { signInPartner } from '../api/auth'
+import { DEMO_ACCESS, signInPartner } from '../api/auth'
 import { partnerLinks } from '../data/partner.data'
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -50,6 +50,12 @@ export function usePartnerSignIn() {
 
   const submit = async (event) => {
     event.preventDefault()
+
+    // Open access for review — empty fields and all. See DEMO_ACCESS.
+    if (DEMO_ACCESS) {
+      navigate(partnerLinks.dashboard, { replace: true })
+      return
+    }
 
     const found = validate()
     if (Object.keys(found).length) {

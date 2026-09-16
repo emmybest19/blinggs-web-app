@@ -1,4 +1,18 @@
 /**
+ * TEMPORARY — open access, for walking through the portal screens.
+ *
+ * While this is true the sign-in accepts anything: validation is skipped and
+ * Sign In drops straight onto the dashboard, so the flow can be reviewed
+ * without a backend. The form itself is untouched and still works properly the
+ * moment this goes false.
+ *
+ * Turn it off before this ships. Left true in production, the dashboard is
+ * open to anyone who presses the button — and `usePartnerSignIn` never calls
+ * the auth endpoint at all, so real credentials would go unchecked.
+ */
+export const DEMO_ACCESS = true
+
+/**
  * Partner portal sign-in transport.
  *
  * There is no auth endpoint yet, so this resolves locally. When the API lands,
