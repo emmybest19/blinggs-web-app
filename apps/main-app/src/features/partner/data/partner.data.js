@@ -12,9 +12,15 @@
  * edit here and a swap from <a href> to <Link to> at the call site.
  */
 export const partnerLinks = {
+  /* Real route: the public partner programme page. */
+  landing: '/affiliate',
+
   /* Real route: the portal sign-in behind "Portal Login" and
    * "Login to Dashboard". */
   portal: '/affiliate/login',
+
+  /* Real route: the partner dashboard, where a successful sign-in lands. */
+  dashboard: '/affiliate/dashboard',
 
   /* Real route: the institution registration step behind "Apply Now" and
    * "Apply as Partner Rep". */

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 
 import MainLayout from './layouts/MainLayout'
+import PartnerDashboardLayout from './layouts/PartnerDashboardLayout'
 import PartnerLayout from './layouts/PartnerLayout'
 import RootLayout from './layouts/RootLayout'
 
@@ -16,6 +17,7 @@ import {
 } from '@features/legal'
 import {
     PartnerApplyPage,
+    PartnerDashboardPage,
     PartnerLoginPage,
     PartnerPage,
 } from '@features/partner'
@@ -72,6 +74,16 @@ const router = createBrowserRouter([
              */
             { path: '/affiliate/login', element: <PartnerLoginPage /> },
             { path: '/affiliate/apply', element: <PartnerApplyPage /> },
+
+            /* The dashboard wears its own header and no footer. */
+            {
+                path: '/affiliate/dashboard',
+                element: <PartnerDashboardLayout />,
+
+                children: [
+                    { index: true, element: <PartnerDashboardPage /> },
+                ]
+            },
         ]
     }
 ])

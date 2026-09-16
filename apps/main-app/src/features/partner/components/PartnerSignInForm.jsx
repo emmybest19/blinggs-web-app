@@ -28,7 +28,6 @@ export default function PartnerSignInForm() {
     showPasscode,
     toggleShowPasscode,
     isSubmitting,
-    isSuccess,
     isError,
   } = usePartnerSignIn()
 
@@ -152,14 +151,11 @@ export default function PartnerSignInForm() {
         </button>
       </form>
 
-      {/* Reserved space so the panel does not jump when a message appears */}
+      {/*
+        * Only a failure surfaces here — a successful sign-in navigates to the
+        * dashboard. Reserved space so the panel does not jump when it appears.
+        */}
       <div aria-live="polite" className="min-h-[22px]">
-        {isSuccess && (
-          <p className="mt-4 text-center font-sans text-[13px] font-medium text-brand">
-            Credentials accepted — the partner terminal is not live yet.
-          </p>
-        )}
-
         {isError && (
           <p className="mt-4 text-center font-sans text-[13px] text-[#ff8080]">
             We could not sign you in. Please try again.
