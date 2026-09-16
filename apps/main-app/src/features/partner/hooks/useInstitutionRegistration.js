@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { registerInstitutions } from '../api/institutions'
+import { partnerLinks } from '../data/partner.data'
 
 const EMPTY_TEXT = { addedChurch: '', customName: '' }
 
@@ -18,6 +20,7 @@ const toggleIn = (list, id) =>
  * both — so nothing here is exclusive.
  */
 export function useInstitutionRegistration() {
+  const navigate = useNavigate()
   const [types, setTypes] = useState([])
   const [selectedUniversities, setSelectedUniversities] = useState([])
   const [selectedChurches, setSelectedChurches] = useState([])
@@ -83,6 +86,19 @@ export function useInstitutionRegistration() {
         customName,
       })
       setStatus('success')
+
+      /*
+       * Registration done — send them on to sign in.
+       *
+       * `replace` so Back from the sign-in screen returns to the partner page
+       * rather than a form they have already submitted. The `registered` flag
+       * lets the sign-in explain why they landed there, instead of the jump
+       * looking like the Continue button misfired.
+       */
+      navigate(partnerLinks.portal, {
+        replace: true,
+        state: { registered: true },
+      })
     } catch {
       setStatus('error')
     }
@@ -100,7 +116,8 @@ export function useInstitutionRegistration() {
     submit,
     error,
     isSubmitting: status === 'submitting',
-    isSuccess: status === 'success',
+    // No `isSuccess`: success navigates away, so there is no success state for
+    // this form to render.
     isError: status === 'error',
   }
 }

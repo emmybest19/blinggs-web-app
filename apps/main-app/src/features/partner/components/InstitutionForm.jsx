@@ -46,7 +46,6 @@ export default function InstitutionForm() {
     submit,
     error,
     isSubmitting,
-    isSuccess,
     isError,
   } = useInstitutionRegistration()
 
@@ -144,14 +143,11 @@ export default function InstitutionForm() {
         </button>
       </form>
 
-      {/* Reserved space so the panel does not jump when a message appears */}
+      {/*
+        * Only a failure surfaces here — a successful Continue navigates to the
+        * sign-in. Reserved space so the panel does not jump when it appears.
+        */}
       <div aria-live="polite" className="min-h-[22px]">
-        {isSuccess && (
-          <p className="mt-4 text-center font-sans text-[13px] font-medium text-brand">
-            Institutions saved — the partner dashboard is not live yet.
-          </p>
-        )}
-
         {isError && (
           <p className="mt-4 text-center font-sans text-[13px] text-[#ff8080]">
             We could not save that. Please try again.

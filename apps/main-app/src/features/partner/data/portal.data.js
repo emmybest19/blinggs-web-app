@@ -8,6 +8,9 @@ export const portalCopy = {
   subtitle:
     'Sign in to access your referral dashboard and track your progress.',
 
+  /* Shown only when arriving straight from the registration step. */
+  registered: 'Institutions registered. Sign in to pick up your dashboard.',
+
   emailLabel: 'Email Address',
   emailPlaceholder: 'Enter your email',
 

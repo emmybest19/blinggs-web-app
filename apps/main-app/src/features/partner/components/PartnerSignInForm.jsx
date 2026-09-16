@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom'
+
 import { partnerLinks } from '../data/partner.data'
 import { portalCopy } from '../data/portal.data'
 import { usePartnerSignIn } from '../hooks/usePartnerSignIn'
@@ -12,6 +14,10 @@ import {
 import { EyeIcon, EyeOffIcon } from './PortalIcons'
 
 export default function PartnerSignInForm() {
+  // Set by the registration step when it redirects here. Absent on a direct
+  // visit, so the notice only appears when it explains something.
+  const justRegistered = Boolean(useLocation().state?.registered)
+
   const {
     values,
     errors,
@@ -35,6 +41,12 @@ export default function PartnerSignInForm() {
       <p className="mt-3.5 font-sans text-[14px] leading-[1.65] text-[#868f99]">
         {portalCopy.subtitle}
       </p>
+
+      {justRegistered && (
+        <p className="mt-5 rounded-[10px] border border-[rgba(33,199,176,0.25)] bg-[rgba(33,199,176,0.08)] px-4 py-3 font-sans text-[13px] leading-[1.6] text-brand">
+          {portalCopy.registered}
+        </p>
+      )}
 
       <form onSubmit={submit} noValidate className="mt-9 flex flex-col gap-5">
         {/* Email */}
