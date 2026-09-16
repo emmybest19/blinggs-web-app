@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { affiliateButton, waitlistButton } from '@shared/ui/ctaStyles'
 
 import { partnerHero, partnerLinks } from '../data/partner.data'
@@ -25,12 +27,12 @@ export default function PartnerHero() {
           {partnerHero.subtitle}
         </p>
 
-        {/* Plain anchors — neither destination exists yet. See partnerLinks. */}
         <div className="mt-7 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-3">
-          <a href={partnerLinks.apply} className={affiliateButton}>
+          <Link to={partnerLinks.apply} className={affiliateButton}>
             Apply as Partner Rep
-          </a>
+          </Link>
 
+          {/* Still a plain anchor — partner terms do not exist yet. */}
           <a href={partnerLinks.terms} className={waitlistButton}>
             Partner Terms
           </a>

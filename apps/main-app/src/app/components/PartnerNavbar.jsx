@@ -16,8 +16,7 @@ const NAV_LINKS = [
  * the CTAs point at the partner portal and application rather than the
  * waitlist.
  *
- * Portal Login is a router Link — that route exists. Apply Now is still a
- * plain anchor because its destination does not. See partnerLinks.
+ * Both destinations are real routes now — see partnerLinks.
  */
 export default function PartnerNavbar() {
   return (
@@ -27,9 +26,9 @@ export default function PartnerNavbar() {
           Portal Login
         </Link>
 
-        <a href={partnerLinks.apply} className={affiliateButton}>
+        <Link to={partnerLinks.apply} className={affiliateButton}>
           Apply Now
-        </a>
+        </Link>
       </div>
     </NavShell>
   )

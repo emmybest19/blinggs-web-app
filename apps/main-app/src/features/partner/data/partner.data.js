@@ -16,8 +16,9 @@ export const partnerLinks = {
    * "Login to Dashboard". */
   portal: '/affiliate/login',
 
-  /* Stub — the partner application form does not exist. */
-  apply: '#',
+  /* Real route: the institution registration step behind "Apply Now" and
+   * "Apply as Partner Rep". */
+  apply: '/affiliate/apply',
 
   /* Stub — partner-specific terms. Deliberately NOT /terms-of-service: that
    * document covers app users, not representatives. */
