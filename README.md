@@ -24,7 +24,7 @@ Requires Node >= 20.19 and pnpm 11. Run `corepack enable` if `pnpm` is missing.
 
 | App                 | Dev port | Purpose                                                        |
 | ------------------- | -------- | -------------------------------------------------------------- |
-| `main-app`          | 5173     | Public marketing site — home, features, how-it-works, waitlist  |
+| `main-app`          | 5173     | Public marketing site: home, features, how-it-works, waitlist  |
 | `super-admin`       | 4100     | Staff accounts, console access, feature flags, global audit log |
 | `finance-admin`     | 4200     | Transactions, settlements, reconciliation, fees                 |
 | `compliance-admin`  | 4300     | KYC review, sanctions screening, cases, regulatory reports      |
@@ -34,7 +34,7 @@ Requires Node >= 20.19 and pnpm 11. Run `corepack enable` if `pnpm` is missing.
 
 Each console is a **separate application with its own build, own deploy and its
 own session**. Signing into finance-admin does not sign you into
-security-admin — that isolation is the reason they are split.
+security-admin: that isolation is the reason they are split.
 
 ## Packages
 
@@ -44,7 +44,7 @@ security-admin — that isolation is the reason they are split.
 | `@blingg/admin-kit`      | the 6 consoles   | Admin shell, auth guard, login screen, tables, primitives  |
 | `@blingg/eslint-config`  | all workspaces   | Shared flat ESLint config                                  |
 
-Packages are consumed **as source** — there is no build step. Vite resolves the
+Packages are consumed **as source**: there is no build step. Vite resolves the
 workspace symlink to the real path and transpiles the JSX directly, so editing
 `admin-kit` hot-reloads in whichever console you have running.
 
@@ -63,7 +63,7 @@ Each app deploys as its own project with its own root directory
 a `vercel.json` rewriting all paths to `index.html` so client-side routes
 survive a refresh.
 
-Vercel's filesystem is **case-sensitive** — asset paths must match filenames
+Vercel's filesystem is **case-sensitive**: asset paths must match filenames
 exactly.
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for layering rules, the shared theme
