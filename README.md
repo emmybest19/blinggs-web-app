@@ -68,3 +68,9 @@ exactly.
 
 See [ARCHITECTURE.md](./ARCHITECTURE.md) for layering rules, the shared theme
 and how to add a console.
+## Further reading
+- [Case study](CASE_STUDY.md)
+- [Trade-offs](TRADEOFFS.md)
+
+## License
+MIT
